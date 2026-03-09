@@ -75,12 +75,12 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
-  /home/tsmc/桌面/ztachip-master/HW/src/soc/peripherals/camera.vhd
+  {/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/camera.vhd}
   {/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/camera_fifo_wrapper.vhd}
   {/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/ddr3_writer.vhd}
   {/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/ddr3_reader.vhd}
   {/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/frame_manager.vhd}
-  /home/tsmc/桌面/ztachip-master/HW/src/soc/peripherals/vga.vhd
+  {/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/vga.vhd}
   {/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/camera_vga_system.vhd}
 }
 read_ip -quiet {{/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/ip/mig_7series_0/mig_7series_0.xci}}

@@ -6,7 +6,7 @@ use xpm.vcomponents.all;
 
 entity camera_fifo_wrapper is
     port (
-        -- 摄像头时钟域
+        -- Camera clock domain
         camera_pclk     : in std_logic;
         camera_rst_n    : in std_logic;
         camera_tdata    : in std_logic_vector(31 downto 0);
@@ -15,7 +15,7 @@ entity camera_fifo_wrapper is
         camera_tlast    : in std_logic;
         camera_tuser    : in std_logic_vector(0 downto 0);
         
-        -- MIG时钟域
+        -- MIG clock domain
         mig_clk         : in std_logic;
         mig_rst_n       : in std_logic;
         fifo_data_out   : out std_logic_vector(127 downto 0);
@@ -28,26 +28,25 @@ entity camera_fifo_wrapper is
 end entity;
 
 architecture rtl of camera_fifo_wrapper is
-    -- FIFO内部信号 - 使用不同的命名
+    -- Internal FIFO signals
     signal data_fifo_full : std_logic;
     signal data_fifo_almost_full : std_logic;
     signal data_fifo_dout : std_logic_vector(127 downto 0);
     signal data_fifo_empty : std_logic;
     
-    -- 帧控制FIFO信号
-    signal frame_ctrl_fifo_din : std_logic_vector(1 downto 0);
+    -- Frame control FIFO signals
     signal frame_ctrl_fifo_dout : std_logic_vector(1 downto 0);
     signal frame_ctrl_fifo_rd_en : std_logic;
     
-    -- 控制信号
+    -- Control signals
     signal wr_enable : std_logic;
     
 begin
-    -- 写入控制
+    -- Write side flow control
     camera_tready <= not data_fifo_full;
     wr_enable <= camera_tvalid and not data_fifo_full;
 
-    -- 主数据FIFO (32->128位转换)
+    -- Main data FIFO (32-bit to 128-bit width conversion)
     data_fifo : xpm_fifo_async
         generic map (
             WRITE_DATA_WIDTH => 32,
@@ -63,14 +62,29 @@ begin
             din => camera_tdata,
             full => data_fifo_full,
             almost_full => data_fifo_almost_full,
+            wr_ack => open,
+            overflow => open,
+            prog_full => open,
+            wr_data_count => open,
             
             rd_clk => mig_clk,
             rd_en => fifo_rd_en,
             dout => data_fifo_dout,
-            empty => data_fifo_empty
+            empty => data_fifo_empty,
+            almost_empty => open,
+            data_valid => open,
+            underflow => open,
+            prog_empty => open,
+            rd_data_count => open,
+            injectsbiterr => '0',
+            injectdbiterr => '0',
+            sbiterr => open,
+            dbiterr => open,
+            wr_rst_busy => open,
+            rd_rst_busy => open
         );
 
-    -- 帧控制FIFO
+    -- Frame control FIFO
     frame_ctrl_fifo : xpm_fifo_async
         generic map (
             WRITE_DATA_WIDTH => 2,
@@ -78,24 +92,41 @@ begin
             FIFO_WRITE_DEPTH => 8
         )
         port map (
-            
+            sleep => '0',
             wr_clk => camera_pclk,
             rst => not camera_rst_n,
             wr_en => wr_enable and (camera_tuser(0) or camera_tlast),
             din => camera_tuser(0) & camera_tlast,
+            full => open,
+            almost_full => open,
+            wr_ack => open,
+            overflow => open,
+            prog_full => open,
+            wr_data_count => open,
             
             rd_clk => mig_clk,
             rd_en => frame_ctrl_fifo_rd_en,
             dout => frame_ctrl_fifo_dout,
-            empty => open
+            empty => open,
+            almost_empty => open,
+            data_valid => open,
+            underflow => open,
+            prog_empty => open,
+            rd_data_count => open,
+            injectsbiterr => '0',
+            injectdbiterr => '0',
+            sbiterr => open,
+            dbiterr => open,
+            wr_rst_busy => open,
+            rd_rst_busy => open
         );
 
-    -- 输出赋值
+    -- Outputs
     fifo_data_out <= data_fifo_dout;
     fifo_empty <= data_fifo_empty;
     fifo_prog_full <= data_fifo_almost_full;
     
-    -- 帧控制逻辑
+    -- Frame control output generation
     frame_ctrl_fifo_rd_en <= fifo_rd_en;
     
     process(mig_clk, mig_rst_n)

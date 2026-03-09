@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a200tfbg484-2" LaunchTime="1772715589">
+<GenRun Id="synth_1" LaunchPart="xc7a200tfbg484-2" LaunchTime="1773024093">
   <File Type="VDS-TIMING-PB" Name="camera_vga_system_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="camera_vga_system_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="camera_vga_system.dcp"/>
@@ -11,7 +11,7 @@
   <File Type="PA-TCL" Name="camera_vga_system.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PPRDIR/../../../../../../home/tsmc/桌面/ztachip-master/HW/src/soc/peripherals/camera.vhd">
+    <File Path="$PSRCDIR/sources_1/new/camera.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -41,7 +41,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../../../../../home/tsmc/桌面/ztachip-master/HW/src/soc/peripherals/vga.vhd">
+    <File Path="$PSRCDIR/sources_1/new/vga.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
