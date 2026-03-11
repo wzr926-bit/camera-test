@@ -46,9 +46,12 @@ end entity;
 
 architecture structural of camera_vga_system is
     -- 时钟和复位
+    signal clk_vga         : std_logic;
+    signal clk_cam         : std_logic;
     signal ui_clk          : std_logic;  -- MIG用户时钟(100MHz)
     signal ui_rst_n        : std_logic;
     signal mmcm_locked     : std_logic;
+    signal pll_locked      : std_logic;
     signal init_calib_complete : std_logic;
     
     -- 摄像头数据流
@@ -83,6 +86,9 @@ architecture structural of camera_vga_system is
     signal vga_fifo_wr_en   : std_logic;
     signal vga_fifo_data    : std_logic_vector(31 downto 0);
     signal vga_fifo_full    : std_logic;
+    signal vga_fifo_rd_en   : std_logic;
+    signal vga_fifo_empty   : std_logic;
+    signal vga_fifo_dout    : std_logic_vector(31 downto 0);
     
     -- 帧管理器
     signal frame_ready      : std_logic;
@@ -117,7 +123,7 @@ begin
     -- 摄像头模块
     u_camera : entity work.camera
         port map (
-            clk_in      => sys_clk_200mhz,
+            clk_in      => clk_cam,
             SIOC        => CAM_SIOC,
             SIOD        => CAM_SIOD,
             RESET       => CAM_RESET,
@@ -138,7 +144,7 @@ begin
     u_write_fifo : entity work.camera_fifo_wrapper
         port map (
             camera_pclk    => CAM_PCLK,
-            camera_rst_n   => '1',
+            camera_rst_n   => sys_rst_n and pll_locked,
             camera_tdata   => cam_tdata,
             camera_tvalid  => cam_tvalid,
             camera_tready  => cam_tready,
@@ -194,9 +200,9 @@ begin
             wr_en => vga_fifo_wr_en,
             din => vga_fifo_data,
             full => vga_fifo_full,
-            rd_en => cam_tready,  -- VGA读取数据
-            dout => open,
-            empty => open
+            rd_en => vga_fifo_rd_en,
+            dout => vga_fifo_dout,
+            empty => vga_fifo_empty
         );
     
     -- DDR3读取器
@@ -243,13 +249,13 @@ begin
     -- VGA显示模块
     u_vga : entity work.vga
         port map (
-            clk_in        => CAM_PCLK,  -- 使用摄像头时钟驱动VGA
-            tdata_in      => vga_fifo_data,
-            tready_out    => cam_tready,
-            tvalid_in     => '1',  -- 需要FIFO非空信号
+            clk_in        => clk_vga,
+            tdata_in      => vga_fifo_dout,
+            tready_out    => vga_fifo_rd_en,
+            tvalid_in     => not vga_fifo_empty,
             tlast_in      => '0',
             VGA_HS_O_out  => VGA_HS,
-            VGA_VS_O_out  => VGA_VS,
+            VGA_VS_O_out  => vga_vsync,
             VGA_R_out     => VGA_R,
             VGA_B_out     => VGA_B,
             VGA_G_out     => VGA_G,
@@ -270,12 +276,20 @@ begin
  -- MIG IP核
      mig_inst : entity work.mig_7series_0
         port map (
+            aresetn         => sys_rst_n,
+            app_sr_req      => '0',
+            app_ref_req     => '0',
+            app_zq_req      => '0',
+            app_sr_active   => open,
+            app_ref_ack     => open,
+            app_zq_ack      => open,
             sys_clk_i       => sys_clk_200mhz,
             sys_rst         => not sys_rst_n,
             ui_clk          => ui_clk,
             ui_clk_sync_rst => open,
             mmcm_locked     => mmcm_locked,
             init_calib_complete => init_calib_complete,
+            device_temp     => open,
             
             -- DDR3物理接口
             ddr3_addr       => DDR3_addr,
@@ -290,50 +304,52 @@ begin
             ddr3_dq         => DDR3_dq,
             ddr3_dqs_n      => DDR3_dqs_n,
             ddr3_dqs_p      => DDR3_dqs_p,
+            ddr3_cs_n       => open,
+            ddr3_dm         => open,
             ddr3_odt        => DDR3_odt,
             
             -- AXI4接口
-            s0_axi_awid     => (others=>'0'),
-            s0_axi_awaddr   => mig_awaddr,
-            s0_axi_awlen    => mig_awlen,
-            s0_axi_awsize   => "100",  -- 16字节(128位)
-            s0_axi_awburst  => "01",   -- INCR
-            s0_axi_awlock   => '0',
-            s0_axi_awcache  => "0011",
-            s0_axi_awprot   => "000",
-            s0_axi_awqos    => (others=>'0'),
-            s0_axi_awvalid  => mig_awvalid,
-            s0_axi_awready  => mig_awready,
-            s0_axi_wdata    => mig_wdata,
-            s0_axi_wstrb    => (others=>'1'),
-            s0_axi_wlast    => mig_wlast,
-            s0_axi_wvalid   => mig_wvalid,
-            s0_axi_wready   => mig_wready,
-            s0_axi_bid      => open,
-            s0_axi_bresp    => open,
-            s0_axi_bvalid   => mig_bvalid,
-            s0_axi_bready   => mig_bready,
-            s0_axi_arid     => (others=>'0'),
-            s0_axi_araddr   => mig_araddr,
-            s0_axi_arlen    => mig_arlen,
-            s0_axi_arsize   => "100",
-            s0_axi_arburst  => "01",
-            s0_axi_arlock   => '0',
-            s0_axi_arcache  => "0011",
-            s0_axi_arprot   => "000",
-            s0_axi_arqos    => (others=>'0'),
-            s0_axi_arvalid  => mig_arvalid,
-            s0_axi_arready  => mig_arready,
-            s0_axi_rid      => open,
-            s0_axi_rdata    => mig_rdata,
-            s0_axi_rresp    => open,
-            s0_axi_rlast    => mig_rlast,
-            s0_axi_rvalid   => mig_rvalid,
-            s0_axi_rready   => mig_rready
+            s_axi_awid      => (others=>'0'),
+            s_axi_awaddr    => '0' & mig_awaddr,
+            s_axi_awlen     => mig_awlen,
+            s_axi_awsize    => "100",  -- 16字节(128位)
+            s_axi_awburst   => "01",   -- INCR
+            s_axi_awlock    => "0",
+            s_axi_awcache   => "0011",
+            s_axi_awprot    => "000",
+            s_axi_awqos     => (others=>'0'),
+            s_axi_awvalid   => mig_awvalid,
+            s_axi_awready   => mig_awready,
+            s_axi_wdata     => mig_wdata,
+            s_axi_wstrb     => (others=>'1'),
+            s_axi_wlast     => mig_wlast,
+            s_axi_wvalid    => mig_wvalid,
+            s_axi_wready    => mig_wready,
+            s_axi_bid       => open,
+            s_axi_bresp     => open,
+            s_axi_bvalid    => mig_bvalid,
+            s_axi_bready    => mig_bready,
+            s_axi_arid      => (others=>'0'),
+            s_axi_araddr    => '0' & mig_araddr,
+            s_axi_arlen     => mig_arlen,
+            s_axi_arsize    => "100",
+            s_axi_arburst   => "01",
+            s_axi_arlock    => "0",
+            s_axi_arcache   => "0011",
+            s_axi_arprot    => "000",
+            s_axi_arqos     => (others=>'0'),
+            s_axi_arvalid   => mig_arvalid,
+            s_axi_arready   => mig_arready,
+            s_axi_rid       => open,
+            s_axi_rdata     => mig_rdata,
+            s_axi_rresp     => open,
+            s_axi_rlast     => mig_rlast,
+            s_axi_rvalid    => mig_rvalid,
+            s_axi_rready    => mig_rready
         );
     
     
-    ui_rst_n <= mmcm_locked and init_calib_complete;
+    ui_rst_n <= mmcm_locked and init_calib_complete and pll_locked;
     
 end architecture;
 

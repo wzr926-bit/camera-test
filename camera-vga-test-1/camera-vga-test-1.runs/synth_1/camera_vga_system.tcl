@@ -57,6 +57,7 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param general.usePosixSpawnForFork 1
+set_param chipscope.maxJobs 4
 set_msg_config  -id {17-179}  -suppress 
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a200tfbg484-2
@@ -105,6 +106,8 @@ read_xdc {{/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/c
 set_property used_in_implementation false [get_files {{/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/constrs_1/new/main.xdc}}]
 
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental {/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/utils_1/imports/synth_1/camera_vga_system.dcp}
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

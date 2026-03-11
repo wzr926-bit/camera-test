@@ -57,10 +57,15 @@ begin
     begin
         if reset_n = '0' then
             frame_state <= WAIT_FIRST_FRAME;
+            write_addr <= FRAME0_ADDR;
+            read_addr <= FRAME1_ADDR;
             write_enable <= '0';
             read_enable <= '0';
             frame_ready <= '0';
+            frame_ready_int <= '0';
             frame_lost <= '0';
+            write_frame_addr <= FRAME0_ADDR;
+            read_frame_addr <= FRAME1_ADDR;
             
         elsif rising_edge(clk) then
             cam_vsync_prev <= cam_vsync;
@@ -131,10 +136,10 @@ begin
                         read_addr <= FRAME0_ADDR;
                     end if;
                     
-                when WRITE_FRAME1_READ_FRAME0 =>
+                when WRITE_FRAME2_READ_FRAME0 =>
                     if write_done = '1' then
-                        frame_state <= WRITE_FRAME2_READ_FRAME1;
-                        write_addr <= FRAME2_ADDR;
+                        frame_state <= WRITE_FRAME0_READ_FRAME1;
+                        write_addr <= FRAME0_ADDR;
                         read_addr <= FRAME1_ADDR;
                     end if;
                     

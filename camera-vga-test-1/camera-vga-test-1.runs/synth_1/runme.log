@@ -7,27 +7,34 @@
   **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
   **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
   **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-  **** Start of session at: Mon Mar  9 10:41:35 2026
+  **** Start of session at: Wed Mar 11 15:14:55 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source camera_vga_system.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental {/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/utils_1/imports/synth_1/camera_vga_system.dcp}
+INFO: [Vivado 12-5825] Read reference checkpoint from /media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/utils_1/imports/synth_1/camera_vga_system.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top camera_vga_system -part xc7a200tfbg484-2
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t'
 INFO: [Device 21-403] Loading part xc7a200tfbg484-2
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
 WARNING: [Common 17-1361] You have specified a new message control rule that is equivalent to an existing rule with attributes ' -id {17-179}  -suppress '. The existing rule will be replaced.
-INFO: [Synth 8-7075] Helper process launched with PID 48411
+INFO: [Synth 8-7075] Helper process launched with PID 2859011
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2169.457 ; gain = 442.797 ; free physical = 36434 ; free virtual = 52913
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2170.340 ; gain = 443.680 ; free physical = 34340 ; free virtual = 45828
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-9112] actual for formal port 'rst' is neither a static name nor a globally static expression [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/camera_fifo_wrapper.vhd:60]
 WARNING: [Synth 8-9112] actual for formal port 'rst' is neither a static name nor a globally static expression [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/camera_fifo_wrapper.vhd:97]
 WARNING: [Synth 8-9112] actual for formal port 'wr_en' is neither a static name nor a globally static expression [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/camera_fifo_wrapper.vhd:98]
 WARNING: [Synth 8-9112] actual for formal port 'din' is neither a static name nor a globally static expression [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/camera_fifo_wrapper.vhd:99]
+WARNING: [Synth 8-9112] actual for formal port 'camera_rst_n' is neither a static name nor a globally static expression [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/camera_vga_system.vhd:147]
+WARNING: [Synth 8-9112] actual for formal port 'tvalid_in' is neither a static name nor a globally static expression [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/camera_vga_system.vhd:255]
 INFO: [Synth 8-638] synthesizing module 'camera_vga_system' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/camera_vga_system.vhd:47]
 INFO: [Synth 8-638] synthesizing module 'camera' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/camera.vhd:43]
 WARNING: [Synth 8-614] signal 'tdata_r' is read in the process but is not in the sensitivity list [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/camera.vhd:275]
@@ -85,26 +92,645 @@ INFO: [Synth 8-6157] synthesizing module 'xpm_counter_updn__parameterized5' [/me
 INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized5' (0#1) [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1879]
 INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_base' (0#1) [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:53]
 INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_async' (0#1) [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:2173]
-	Parameter FIFO_WRITE_DEPTH bound to: 8 - type: integer 
+	Parameter FIFO_WRITE_DEPTH bound to: 16 - type: integer 
 	Parameter WRITE_DATA_WIDTH bound to: 2 - type: integer 
 	Parameter READ_DATA_WIDTH bound to: 2 - type: integer 
 INFO: [Synth 8-3491] module 'xpm_fifo_async' declared at '/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:2173' bound to instance 'frame_ctrl_fifo' of component 'xpm_fifo_async' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/camera_fifo_wrapper.vhd:88]
 INFO: [Synth 8-6157] synthesizing module 'xpm_fifo_async__parameterized1' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:2173]
-	Parameter FIFO_WRITE_DEPTH bound to: 8 - type: integer 
+	Parameter FIFO_WRITE_DEPTH bound to: 16 - type: integer 
 	Parameter WRITE_DATA_WIDTH bound to: 2 - type: integer 
 	Parameter READ_DATA_WIDTH bound to: 2 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'xpm_fifo_base__parameterized0' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:53]
-ERROR: [Synth 8-6058] Synth Error: [XPM_FIFO 1-3] FIFO_WRITE_DEPTH (8) value specified is not within the supported ranges. Miniumum supported depth is 16, and the maximum supported depth is 4*1024*1024 locations.   [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:332]
-ERROR: [Synth 8-6156] failed synthesizing module 'xpm_fifo_base__parameterized0' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:53]
-ERROR: [Synth 8-6156] failed synthesizing module 'xpm_fifo_async__parameterized1' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:2173]
-ERROR: [Synth 8-285] failed synthesizing module 'camera_fifo_wrapper' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/camera_fifo_wrapper.vhd:30]
-ERROR: [Synth 8-285] failed synthesizing module 'camera_vga_system' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/camera_vga_system.vhd:47]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized0' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6059] Synth Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value.   [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:522]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized0' (0#1) [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_gray__parameterized3' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:283]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_gray__parameterized3' (0#1) [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:283]
+INFO: [Synth 8-6157] synthesizing module 'xpm_fifo_reg_vec__parameterized3' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1905]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_reg_vec__parameterized3' (0#1) [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1905]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_gray__parameterized4' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:283]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_gray__parameterized4' (0#1) [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:283]
+INFO: [Synth 8-6157] synthesizing module 'xpm_fifo_reg_vec__parameterized4' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1905]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_reg_vec__parameterized4' (0#1) [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1905]
+INFO: [Synth 8-6157] synthesizing module 'xpm_counter_updn__parameterized6' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1879]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized6' (0#1) [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1879]
+INFO: [Synth 8-6157] synthesizing module 'xpm_counter_updn__parameterized7' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1879]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized7' (0#1) [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1879]
+INFO: [Synth 8-6157] synthesizing module 'xpm_counter_updn__parameterized8' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1879]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_counter_updn__parameterized8' (0#1) [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:1879]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_base__parameterized0' (0#1) [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_async__parameterized1' (0#1) [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:2173]
+INFO: [Synth 8-256] done synthesizing module 'camera_fifo_wrapper' (0#1) [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/camera_fifo_wrapper.vhd:30]
+INFO: [Synth 8-638] synthesizing module 'ddr3_writer' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/ddr3_writer.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'ddr3_writer' (0#1) [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/ddr3_writer.vhd:42]
+INFO: [Synth 8-6157] synthesizing module 'xpm_fifo_async__parameterized2' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:2173]
+	Parameter FIFO_WRITE_DEPTH bound to: 1024 - type: integer 
+	Parameter WRITE_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter READ_DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'xpm_fifo_base__parameterized1' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized1' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6059] Synth Info: [XPM_MEMORY 20-1] MEMORY_PRIMITIVE (0) instructs Vivado Synthesis to choose the memory primitive type. Depending on their values, other XPM_MEMORY parameters may preclude the choice of certain memory primitive types. Review XPM_MEMORY documentation and parameter values to understand any limitations, or set MEMORY_PRIMITIVE to a different value.   [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:522]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized1' (0#1) [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:54]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_base__parameterized1' (0#1) [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_fifo_async__parameterized2' (0#1) [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv:2173]
+INFO: [Synth 8-638] synthesizing module 'ddr3_reader' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/ddr3_reader.vhd:37]
+INFO: [Synth 8-256] done synthesizing module 'ddr3_reader' (0#1) [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/ddr3_reader.vhd:37]
+INFO: [Synth 8-638] synthesizing module 'frame_manager' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/frame_manager.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'frame_manager' (0#1) [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/frame_manager.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'vga' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/vga.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'vga' (0#1) [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/vga.vhd:41]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.runs/synth_1/.Xil/Vivado-2858592-tsmc-System-Product-Name/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.runs/synth_1/.Xil/Vivado-2858592-tsmc-System-Product-Name/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'mig_7series_0' [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.runs/synth_1/.Xil/Vivado-2858592-tsmc-System-Product-Name/realtime/mig_7series_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mig_7series_0' (0#1) [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.runs/synth_1/.Xil/Vivado-2858592-tsmc-System-Product-Name/realtime/mig_7series_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'camera_vga_system' (0#1) [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/camera_vga_system.vhd:47]
+WARNING: [Synth 8-6014] Unused sequential element gen_rd_b.gen_rd_b_synth_template.gen_nc_wide_reg.rd_sync.addrblsb_reg was removed.  [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:3040]
+Info : Asymmetric Ram read pattern identified
+Info : Asymmetric Ram read pattern identified
+WARNING: [Synth 8-6014] Unused sequential element dest_out_bin_ff_reg was removed.  [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:417]
+WARNING: [Synth 8-6014] Unused sequential element dest_out_bin_ff_reg was removed.  [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:417]
+WARNING: [Synth 8-6014] Unused sequential element dest_out_bin_ff_reg was removed.  [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:417]
+WARNING: [Synth 8-6014] Unused sequential element dest_out_bin_ff_reg was removed.  [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:417]
+WARNING: [Synth 8-6014] Unused sequential element dest_out_bin_ff_reg was removed.  [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:417]
+WARNING: [Synth 8-6014] Unused sequential element dest_out_bin_ff_reg was removed.  [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:417]
+WARNING: [Synth 8-6014] Unused sequential element tdata_r_reg was removed.  [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/vga.vhd:191]
+WARNING: [Synth 8-6014] Unused sequential element pause_r_reg was removed.  [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/vga.vhd:194]
+WARNING: [Synth 8-7129] Port tdata_in[31] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[30] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[29] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[28] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[27] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[26] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[25] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[24] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[23] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[22] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[21] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[20] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[19] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[18] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[17] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[16] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[15] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[14] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[13] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[12] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[11] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[10] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[9] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[8] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[7] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[6] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[5] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[4] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[3] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[2] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[1] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tdata_in[0] in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port tlast_in in module vga is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sleep in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rsta in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port regcea in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port injectsbiterra in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port injectdbiterra in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port regceb in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[31] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[30] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[29] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[28] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[27] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[26] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[25] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[24] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[23] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[22] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[21] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[20] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[19] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[18] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[17] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[16] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[15] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[14] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[13] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[12] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[11] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[10] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[9] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[8] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[7] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[6] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[5] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[4] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[3] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[2] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[1] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[0] in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port injectsbiterrb in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port injectdbiterrb in module xpm_memory_base__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port fifo_frame_start in module ddr3_writer is either unconnected or has no load
+WARNING: [Synth 8-7129] Port fifo_frame_end in module ddr3_writer is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sleep in module xpm_memory_base__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rsta in module xpm_memory_base__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port regcea in module xpm_memory_base__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port injectsbiterra in module xpm_memory_base__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port injectdbiterra in module xpm_memory_base__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port regceb in module xpm_memory_base__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[1] in module xpm_memory_base__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[0] in module xpm_memory_base__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port injectsbiterrb in module xpm_memory_base__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port injectdbiterrb in module xpm_memory_base__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sleep in module xpm_memory_base is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rsta in module xpm_memory_base is either unconnected or has no load
+WARNING: [Synth 8-7129] Port regcea in module xpm_memory_base is either unconnected or has no load
+WARNING: [Synth 8-7129] Port injectsbiterra in module xpm_memory_base is either unconnected or has no load
+WARNING: [Synth 8-7129] Port injectdbiterra in module xpm_memory_base is either unconnected or has no load
+WARNING: [Synth 8-7129] Port regceb in module xpm_memory_base is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[127] in module xpm_memory_base is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[126] in module xpm_memory_base is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[125] in module xpm_memory_base is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[124] in module xpm_memory_base is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[123] in module xpm_memory_base is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[122] in module xpm_memory_base is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[121] in module xpm_memory_base is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[120] in module xpm_memory_base is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dinb[119] in module xpm_memory_base is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2251.395 ; gain = 524.734 ; free physical = 36331 ; free virtual = 52811
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2263.277 ; gain = 536.617 ; free physical = 34099 ; free virtual = 45589
 ---------------------------------------------------------------------------------
-RTL Elaboration failed
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2263.277 ; gain = 536.617 ; free physical = 34081 ; free virtual = 45570
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2263.277 ; gain = 536.617 ; free physical = 34081 ; free virtual = 45570
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2263.277 ; gain = 0.000 ; free physical = 34043 ; free virtual = 45533
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc] for cell 'mig_inst'
+Finished Parsing XDC File [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/mig_7series_0_in_context.xdc] for cell 'mig_inst'
+Parsing XDC File [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'u_clk_wiz'
+Finished Parsing XDC File [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'u_clk_wiz'
+Parsing XDC File [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/constrs_1/new/main.xdc]
+Finished Parsing XDC File [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/constrs_1/new/main.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/constrs_1/new/main.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/camera_vga_system_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/camera_vga_system_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_gray.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/camera_vga_system_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/camera_vga_system_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/camera_vga_system_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/camera_vga_system_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-1714] 21 XPM XDC files have been applied to the design.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2369.109 ; gain = 0.000 ; free physical = 34033 ; free virtual = 45522
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+sh: 1: cannot create /media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado: Is a directory
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2369.145 ; gain = 0.000 ; free physical = 34028 ; free virtual = 45518
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2369.145 ; gain = 642.484 ; free physical = 33972 ; free virtual = 45462
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a200tfbg484-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2377.113 ; gain = 650.453 ; free physical = 33964 ; free virtual = 45454
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2377.113 ; gain = 650.453 ; free physical = 33958 ; free virtual = 45447
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3936] Found unconnected internal register 'tdata_r_reg' and it is trimmed from '32' to '24' bits. [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/camera.vhd:321]
+WARNING: [Synth 8-3936] Found unconnected internal register 'camera_d_r_reg' and it is trimmed from '8' to '7' bits. [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/sources_1/new/camera.vhd:266]
+WARNING: [Synth 8-6040] Register address_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+INFO: [Synth 8-802] inferred FSM for state register 'gen_rst_ic.curr_wrst_state_reg' in module 'xpm_fifo_rst__xdcDup__1'
+INFO: [Synth 8-802] inferred FSM for state register 'gen_rst_ic.curr_rrst_state_reg' in module 'xpm_fifo_rst__xdcDup__1'
+INFO: [Synth 8-802] inferred FSM for state register 'gen_rst_ic.curr_wrst_state_reg' in module 'xpm_fifo_rst__xdcDup__2'
+INFO: [Synth 8-802] inferred FSM for state register 'gen_rst_ic.curr_rrst_state_reg' in module 'xpm_fifo_rst__xdcDup__2'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'ddr3_writer'
+INFO: [Synth 8-802] inferred FSM for state register 'gen_rst_ic.curr_wrst_state_reg' in module 'xpm_fifo_rst'
+INFO: [Synth 8-802] inferred FSM for state register 'gen_rst_ic.curr_rrst_state_reg' in module 'xpm_fifo_rst'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'ddr3_reader'
+INFO: [Synth 8-802] inferred FSM for state register 'frame_state_reg' in module 'frame_manager'
+INFO: [Synth 8-5552] Implemented safe state 'default_state' for state register 'gen_rst_ic.curr_wrst_state_reg' in module 'xpm_fifo_rst__xdcDup__1'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+               WRST_IDLE |                            00001 |                              000
+                 WRST_IN |                            00010 |                              010
+                WRST_OUT |                            00100 |                              111
+               WRST_EXIT |                            01000 |                              110
+            WRST_GO2IDLE |                            10000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'gen_rst_ic.curr_wrst_state_reg' using encoding 'one-hot' in module 'xpm_fifo_rst__xdcDup__1'
+INFO: [Synth 8-5552] Implemented safe state 'default_state' for state register 'gen_rst_ic.curr_rrst_state_reg' in module 'xpm_fifo_rst__xdcDup__1'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+               RRST_IDLE |                               00 |                               00
+                 RRST_IN |                               01 |                               10
+                RRST_OUT |                               10 |                               11
+               RRST_EXIT |                               11 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'gen_rst_ic.curr_rrst_state_reg' using encoding 'sequential' in module 'xpm_fifo_rst__xdcDup__1'
+INFO: [Synth 8-5552] Implemented safe state 'default_state' for state register 'gen_rst_ic.curr_wrst_state_reg' in module 'xpm_fifo_rst__xdcDup__2'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+               WRST_IDLE |                            00001 |                              000
+                 WRST_IN |                            00010 |                              010
+                WRST_OUT |                            00100 |                              111
+               WRST_EXIT |                            01000 |                              110
+            WRST_GO2IDLE |                            10000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'gen_rst_ic.curr_wrst_state_reg' using encoding 'one-hot' in module 'xpm_fifo_rst__xdcDup__2'
+INFO: [Synth 8-5552] Implemented safe state 'default_state' for state register 'gen_rst_ic.curr_rrst_state_reg' in module 'xpm_fifo_rst__xdcDup__2'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+               RRST_IDLE |                               00 |                               00
+                 RRST_IN |                               01 |                               10
+                RRST_OUT |                               10 |                               11
+               RRST_EXIT |                               11 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'gen_rst_ic.curr_rrst_state_reg' using encoding 'sequential' in module 'xpm_fifo_rst__xdcDup__2'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                            00001 |                              000
+              wait_frame |                            00010 |                              001
+             start_burst |                            00100 |                              010
+             write_burst |                            01000 |                              011
+               wait_resp |                            10000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'ddr3_writer'
+INFO: [Synth 8-5552] Implemented safe state 'default_state' for state register 'gen_rst_ic.curr_wrst_state_reg' in module 'xpm_fifo_rst'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+               WRST_IDLE |                            00001 |                              000
+                 WRST_IN |                            00010 |                              010
+                WRST_OUT |                            00100 |                              111
+               WRST_EXIT |                            01000 |                              110
+            WRST_GO2IDLE |                            10000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'gen_rst_ic.curr_wrst_state_reg' using encoding 'one-hot' in module 'xpm_fifo_rst'
+INFO: [Synth 8-5552] Implemented safe state 'default_state' for state register 'gen_rst_ic.curr_rrst_state_reg' in module 'xpm_fifo_rst'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+*
+               RRST_IDLE |                               00 |                               00
+                 RRST_IN |                               01 |                               10
+                RRST_OUT |                               10 |                               11
+               RRST_EXIT |                               11 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'gen_rst_ic.curr_rrst_state_reg' using encoding 'sequential' in module 'xpm_fifo_rst'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                               00 |                               00
+              start_read |                               01 |                               01
+               wait_data |                               10 |                               10
+            send_to_fifo |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'ddr3_reader'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+        wait_first_frame |                            00001 |                              000
+write_frame0_read_frame1 |                            00010 |                              001
+write_frame1_read_frame0 |                            00100 |                              101
+write_frame2_read_frame1 |                            01000 |                              110
+write_frame0_read_frame2 |                            10000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'frame_state_reg' using encoding 'one-hot' in module 'frame_manager'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2377.113 ; gain = 650.453 ; free physical = 33830 ; free virtual = 45321
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   28 Bit       Adders := 3     
+	   2 Input   17 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 3     
+	   4 Input   11 Bit       Adders := 3     
+	   2 Input   11 Bit       Adders := 1     
+	   3 Input   11 Bit       Adders := 2     
+	   4 Input   10 Bit       Adders := 6     
+	   3 Input   10 Bit       Adders := 1     
+	   2 Input    9 Bit       Adders := 1     
+	   4 Input    9 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 4     
+	   4 Input    8 Bit       Adders := 2     
+	   3 Input    8 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 2     
+	   4 Input    5 Bit       Adders := 2     
+	   2 Input    5 Bit       Adders := 1     
+	   3 Input    5 Bit       Adders := 2     
+	   4 Input    4 Bit       Adders := 3     
+	   3 Input    4 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 3     
++---XORs : 
+	   2 Input     11 Bit         XORs := 3     
+	   2 Input     10 Bit         XORs := 3     
+	   2 Input      9 Bit         XORs := 1     
+	   2 Input      8 Bit         XORs := 1     
+	   2 Input      5 Bit         XORs := 2     
+	   2 Input      4 Bit         XORs := 2     
+	   2 Input      1 Bit         XORs := 86    
++---Registers : 
+	              128 Bit    Registers := 3     
+	               32 Bit    Registers := 4     
+	               28 Bit    Registers := 8     
+	               24 Bit    Registers := 1     
+	               17 Bit    Registers := 1     
+	               16 Bit    Registers := 3     
+	               11 Bit    Registers := 18    
+	               10 Bit    Registers := 19    
+	                9 Bit    Registers := 7     
+	                8 Bit    Registers := 12    
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 13    
+	                4 Bit    Registers := 15    
+	                2 Bit    Registers := 13    
+	                1 Bit    Registers := 67    
++---RAMs : 
+	              32K Bit	(1024 X 32 bit)          RAMs := 2     
+	               32 Bit	(16 X 2 bit)          RAMs := 1     
++---ROMs : 
+	                    ROMs := 1     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 2     
+	   4 Input   32 Bit        Muxes := 2     
+	   5 Input   28 Bit        Muxes := 3     
+	   4 Input   28 Bit        Muxes := 1     
+	   5 Input   17 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 1     
+	   5 Input    6 Bit        Muxes := 1     
+	   4 Input    6 Bit        Muxes := 1     
+	   6 Input    5 Bit        Muxes := 3     
+	   2 Input    5 Bit        Muxes := 25    
+	   5 Input    5 Bit        Muxes := 2     
+	   6 Input    4 Bit        Muxes := 1     
+	   5 Input    2 Bit        Muxes := 3     
+	   2 Input    2 Bit        Muxes := 9     
+	   4 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 20    
+	   4 Input    1 Bit        Muxes := 13    
+	   6 Input    1 Bit        Muxes := 6     
+	   5 Input    1 Bit        Muxes := 19    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 740 (col length:100)
+BRAMs: 730 (col length: RAMB18 100 RAMB36 50)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-6040] Register address_reg_rep_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+DSP Report: Generating DSP R, operation Mode is: (A:0xa00)*B.
+DSP Report: operator R is absorbed into DSP R.
+DSP Report: operator R is absorbed into DSP R.
+WARNING: [Synth 8-6014] Unused sequential element gen_wr_a.gen_word_narrow.mem_reg was removed. 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2377.113 ; gain = 650.453 ; free physical = 33675 ; free virtual = 45172
+---------------------------------------------------------------------------------
+ Sort Area is  R_0 : 0 0 : 292 292 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|camera      | sreg_reg   | 256x16        | Block RAM      | 
++------------+------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping Report (see note below)
++--------------------------------------------------------------------------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name                                                                                       | RTL Object                       | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++--------------------------------------------------------------------------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|\u_write_fifo/data_fifo /\gnuram_async_fifo.xpm_fifo_base_inst /\gen_sdpram.xpm_memory_base_inst  | gen_wr_a.gen_word_narrow.mem_reg | 1 K x 32(NO_CHANGE)    | W |   | 256 x 128(WRITE_FIRST) |   | R | Port A and B     | 0      | 2      | 
++--------------------------------------------------------------------------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++--------------------------------------------------------------------------------------------------------+----------------------------------+-----------+----------------------+---------------+
+|Module Name                                                                                             | RTL Object                       | Inference | Size (Depth x Width) | Primitives    | 
++--------------------------------------------------------------------------------------------------------+----------------------------------+-----------+----------------------+---------------+
+|\u_write_fifo/frame_ctrl_fifo /\gnuram_async_fifo.xpm_fifo_base_inst /\gen_sdpram.xpm_memory_base_inst  | gen_wr_a.gen_word_narrow.mem_reg | Implied   | 16 x 2               | RAM16X1D x 2  | 
++--------------------------------------------------------------------------------------------------------+----------------------------------+-----------+----------------------+---------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|ddr3_reader | (A:0xa00)*B | 10     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2486.113 ; gain = 759.453 ; free physical = 33445 ; free virtual = 44943
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2538.160 ; gain = 811.500 ; free physical = 33518 ; free virtual = 45016
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++--------------------------------------------------------------------------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name                                                                                       | RTL Object                       | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++--------------------------------------------------------------------------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|\u_write_fifo/data_fifo /\gnuram_async_fifo.xpm_fifo_base_inst /\gen_sdpram.xpm_memory_base_inst  | gen_wr_a.gen_word_narrow.mem_reg | 1 K x 32(NO_CHANGE)    | W |   | 256 x 128(WRITE_FIRST) |   | R | Port A and B     | 0      | 2      | 
++--------------------------------------------------------------------------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping Report
++--------------------------------------------------------------------------------------------------------+----------------------------------+-----------+----------------------+---------------+
+|Module Name                                                                                             | RTL Object                       | Inference | Size (Depth x Width) | Primitives    | 
++--------------------------------------------------------------------------------------------------------+----------------------------------+-----------+----------------------+---------------+
+|\u_write_fifo/frame_ctrl_fifo /\gnuram_async_fifo.xpm_fifo_base_inst /\gen_sdpram.xpm_memory_base_inst  | gen_wr_a.gen_word_narrow.mem_reg | Implied   | 16 x 2               | RAM16X1D x 2  | 
++--------------------------------------------------------------------------------------------------------+----------------------------------+-----------+----------------------+---------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance u_write_fifo/data_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_write_fifo/data_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_camera/sreg_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2538.160 ; gain = 811.500 ; free physical = 33554 ; free virtual = 45052
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3295] tying undriven pin u_read_fifo:sleep to constant 0
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2681.973 ; gain = 955.312 ; free physical = 33462 ; free virtual = 44960
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2681.973 ; gain = 955.312 ; free physical = 33461 ; free virtual = 44959
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2681.973 ; gain = 955.312 ; free physical = 33459 ; free virtual = 44957
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2681.973 ; gain = 955.312 ; free physical = 33458 ; free virtual = 44957
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2684.941 ; gain = 958.281 ; free physical = 33465 ; free virtual = 44963
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2684.941 ; gain = 958.281 ; free physical = 33457 ; free virtual = 44955
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|ddr3_reader | A*B         | 0      | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
+|2     |mig_7series_0 |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+------------+------+
+|      |Cell        |Count |
++------+------------+------+
+|1     |clk_wiz     |     1|
+|2     |mig_7series |     1|
+|3     |BUFG        |     1|
+|4     |CARRY4      |    71|
+|5     |DSP48E1     |     1|
+|6     |LUT1        |    61|
+|7     |LUT2        |   264|
+|8     |LUT3        |   155|
+|9     |LUT4        |   101|
+|10    |LUT5        |   152|
+|11    |LUT6        |   172|
+|12    |RAM16X1D    |     2|
+|13    |RAMB18E1    |     1|
+|14    |RAMB36E1    |     2|
+|15    |FDCE        |    46|
+|16    |FDPE        |     6|
+|17    |FDRE        |  1180|
+|18    |FDSE        |    46|
+|19    |IBUF        |    12|
+|20    |OBUF        |    18|
+|21    |OBUFT       |     1|
++------+------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2684.941 ; gain = 958.281 ; free physical = 33457 ; free virtual = 44955
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 225 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 2684.941 ; gain = 852.414 ; free physical = 33456 ; free virtual = 44955
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2684.949 ; gain = 958.281 ; free physical = 33456 ; free virtual = 44955
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2684.949 ; gain = 0.000 ; free physical = 33530 ; free virtual = 45029
+INFO: [Netlist 29-17] Analyzing 77 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2740.969 ; gain = 0.000 ; free physical = 33625 ; free virtual = 45123
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2 instances were transformed.
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 2 instances
+
+sh: 1: cannot create /media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado: Is a directory
+Synth Design complete | Checksum: 8bffaffe
 INFO: [Common 17-83] Releasing license: Synthesis
-57 Infos, 6 Warnings, 0 Critical Warnings and 6 Errors encountered.
-synth_design failed
-ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
-INFO: [Common 17-206] Exiting Vivado at Mon Mar  9 10:41:44 2026...
+143 Infos, 124 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:24 . Memory (MB): peak = 2741.004 ; gain = 1180.492 ; free physical = 33636 ; free virtual = 45135
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2104.556; main = 1891.377; forked = 279.246
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3656.645; main = 2740.973; forked = 971.699
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2764.980 ; gain = 0.000 ; free physical = 33622 ; free virtual = 45121
+INFO: [Common 17-1381] The checkpoint '/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.runs/synth_1/camera_vga_system.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file camera_vga_system_utilization_synth.rpt -pb camera_vga_system_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 11 15:15:23 2026...

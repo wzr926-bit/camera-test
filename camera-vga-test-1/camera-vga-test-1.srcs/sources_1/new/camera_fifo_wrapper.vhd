@@ -89,7 +89,7 @@ begin
         generic map (
             WRITE_DATA_WIDTH => 2,
             READ_DATA_WIDTH => 2,
-            FIFO_WRITE_DEPTH => 8
+            FIFO_WRITE_DEPTH => 16
         )
         port map (
             sleep => '0',

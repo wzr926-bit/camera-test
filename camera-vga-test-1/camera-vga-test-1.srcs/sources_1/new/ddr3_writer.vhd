@@ -88,8 +88,8 @@ begin
                     end if;
                     
                 when WAIT_FRAME =>
-                    -- 等待新帧开始
-                    if fifo_frame_start = '1' then
+                    -- 适配 camera.vhd：无 frame_start 标记，检测到已有缓存数据后开始写入
+                    if fifo_prog_full = '1' or fifo_empty = '0' then
                         state <= START_BURST;
                     end if;
                     
@@ -138,15 +138,10 @@ begin
                             write_done <= '1';
                         else
                             -- 继续下一突发
-                            state <= START_BURST;
+                            state <= WAIT_FRAME;
                         end if;
                     end if;
             end case;
-            
-            -- 帧结束检测
-            if fifo_frame_end = '1' then
-                frame_in_progress <= '0';
-            end if;
         end if;
     end process;
     

@@ -224,7 +224,7 @@ line_req_out <= line_req;
             -- 在垂直消隐期间请求下一行
             if pixel_valid_y = '0' and vcount_r = to_unsigned(V_FP - 1, vcount_r'length) then
                 line_req <= '1';
-                line_num <= to_integer(vcount_r - V_FP);
+                line_num <= 0;
             else
                 line_req <= '0';
             end if;

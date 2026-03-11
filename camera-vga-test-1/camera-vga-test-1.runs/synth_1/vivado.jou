@@ -3,8 +3,8 @@
 # SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Mon Mar  9 10:41:35 2026
-# Process ID         : 47752
+# Start of session at: Wed Mar 11 15:14:55 2026
+# Process ID         : 2858592
 # Current directory  : /media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.runs/synth_1
 # Command line       : vivado -log camera_vga_system.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source camera_vga_system.tcl
 # Log file           : /media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.runs/synth_1/camera_vga_system.vds
@@ -13,12 +13,12 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 22.04.3 LTS
 # Processor Detail   : 11th Gen Intel(R) Core(TM) i9-11900K @ 3.50GHz
-# CPU Frequency      : 4800.000 MHz
+# CPU Frequency      : 4684.539 MHz
 # CPU Physical cores : 8
 # CPU Logical cores  : 16
 # Host memory        : 67241 MB
 # Swap memory        : 2147 MB
 # Total Virtual      : 69388 MB
-# Available Virtual  : 56814 MB
+# Available Virtual  : 49768 MB
 #-----------------------------------------------------------
 source camera_vga_system.tcl -notrace

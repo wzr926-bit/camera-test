@@ -1,0 +1,401 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Wed Mar 11 15:15:37 2026
+# Process ID         : 2861180
+# Current directory  : /media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.runs/impl_1
+# Command line       : vivado -log camera_vga_system.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source camera_vga_system.tcl -notrace
+# Log file           : /media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.runs/impl_1/camera_vga_system.vdi
+# Journal file       : /media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.runs/impl_1/vivado.jou
+# Running On         : tsmc-System-Product-Name
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 22.04.3 LTS
+# Processor Detail   : 11th Gen Intel(R) Core(TM) i9-11900K @ 3.50GHz
+# CPU Frequency      : 1914.960 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 67241 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 69388 MB
+# Available Virtual  : 49308 MB
+#-----------------------------------------------------------
+source camera_vga_system.tcl -notrace
+Command: link_design -top camera_vga_system -part xc7a200tfbg484-2
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7a200tfbg484-2
+INFO: [Project 1-5699] Read binary netlist with skipMacroContent - 1
+INFO: [Project 1-454] Reading design checkpoint '/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0.dcp' for cell 'mig_inst'
+INFO: [Project 1-454] Reading design checkpoint '/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.dcp' for cell 'u_clk_wiz'
+Netlist sorting complete. Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.08 . Memory (MB): peak = 1748.711 ; gain = 0.000 ; free physical = 34769 ; free virtual = 46261
+INFO: [Netlist 29-17] Analyzing 554 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/gen_cs_n_obuf.gen_cs_obuf[0].u_cs_n_obuf 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
+WARNING: [Opt 31-35] Removing redundant IBUF, u_clk_wiz/inst/clkin1_ibufg, from the path connected to top-level port: sys_clk_200mhz 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Constraints 18-550] Could not create 'DRIVE' constraint because net 'mig_inst/ddr3_cs_n[0]' is not directly connected to top level port. 'DRIVE' is ignored for synthesis but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'mig_inst/ddr3_cs_n[0]' is not directly connected to top level port. 'SLEW' is ignored for synthesis but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'DRIVE' constraint because net 'mig_inst/ddr3_dm[0]' is not directly connected to top level port. 'DRIVE' is ignored for synthesis but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'mig_inst/ddr3_dm[0]' is not directly connected to top level port. 'SLEW' is ignored for synthesis but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'DRIVE' constraint because net 'mig_inst/ddr3_dm[1]' is not directly connected to top level port. 'DRIVE' is ignored for synthesis but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'mig_inst/ddr3_dm[1]' is not directly connected to top level port. 'SLEW' is ignored for synthesis but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'DRIVE' constraint because net 'mig_inst/ddr3_dm[2]' is not directly connected to top level port. 'DRIVE' is ignored for synthesis but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'mig_inst/ddr3_dm[2]' is not directly connected to top level port. 'SLEW' is ignored for synthesis but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'DRIVE' constraint because net 'mig_inst/ddr3_dm[3]' is not directly connected to top level port. 'DRIVE' is ignored for synthesis but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'SLEW' constraint because net 'mig_inst/ddr3_dm[3]' is not directly connected to top level port. 'SLEW' is ignored for synthesis but preserved for implementation.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'u_clk_wiz/clk_in1' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored for synthesis but preserved for implementation.
+Parsing XDC File [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc] for cell 'mig_inst'
+CRITICAL WARNING: [Netlist 29-160] Cannot set property 'SLEW', because the property does not exist for objects of type 'pin'. [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc:343]
+Resolution: Modify the set_property command to apply the property on the correct object type. Since the property is being applied as a scoped constraint, ensure the proper connectivity of the object port objects can be translated into pin objects. This could be due to the insertion of IO Buffers between the top level terminal and cell pin. If the goal is to apply constraints that will migrate to top level ports it is required that IO Buffers manually be instanced.
+CRITICAL WARNING: [Netlist 29-160] Cannot set property 'IOSTANDARD', because the property does not exist for objects of type 'pin'. [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc:344]
+Resolution: Modify the set_property command to apply the property on the correct object type. Since the property is being applied as a scoped constraint, ensure the proper connectivity of the object port objects can be translated into pin objects. This could be due to the insertion of IO Buffers between the top level terminal and cell pin. If the goal is to apply constraints that will migrate to top level ports it is required that IO Buffers manually be instanced.
+CRITICAL WARNING: [Netlist 29-160] Cannot set property 'PACKAGE_PIN', because the property does not exist for objects of type 'pin'. [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc:345]
+Resolution: Modify the set_property command to apply the property on the correct object type. Since the property is being applied as a scoped constraint, ensure the proper connectivity of the object port objects can be translated into pin objects. This could be due to the insertion of IO Buffers between the top level terminal and cell pin. If the goal is to apply constraints that will migrate to top level ports it is required that IO Buffers manually be instanced.
+CRITICAL WARNING: [Netlist 29-160] Cannot set property 'SLEW', because the property does not exist for objects of type 'pin'. [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc:348]
+Resolution: Modify the set_property command to apply the property on the correct object type. Since the property is being applied as a scoped constraint, ensure the proper connectivity of the object port objects can be translated into pin objects. This could be due to the insertion of IO Buffers between the top level terminal and cell pin. If the goal is to apply constraints that will migrate to top level ports it is required that IO Buffers manually be instanced.
+CRITICAL WARNING: [Netlist 29-160] Cannot set property 'IOSTANDARD', because the property does not exist for objects of type 'pin'. [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc:349]
+Resolution: Modify the set_property command to apply the property on the correct object type. Since the property is being applied as a scoped constraint, ensure the proper connectivity of the object port objects can be translated into pin objects. This could be due to the insertion of IO Buffers between the top level terminal and cell pin. If the goal is to apply constraints that will migrate to top level ports it is required that IO Buffers manually be instanced.
+CRITICAL WARNING: [Netlist 29-160] Cannot set property 'PACKAGE_PIN', because the property does not exist for objects of type 'pin'. [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc:350]
+Resolution: Modify the set_property command to apply the property on the correct object type. Since the property is being applied as a scoped constraint, ensure the proper connectivity of the object port objects can be translated into pin objects. This could be due to the insertion of IO Buffers between the top level terminal and cell pin. If the goal is to apply constraints that will migrate to top level ports it is required that IO Buffers manually be instanced.
+CRITICAL WARNING: [Netlist 29-160] Cannot set property 'SLEW', because the property does not exist for objects of type 'pin'. [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc:353]
+Resolution: Modify the set_property command to apply the property on the correct object type. Since the property is being applied as a scoped constraint, ensure the proper connectivity of the object port objects can be translated into pin objects. This could be due to the insertion of IO Buffers between the top level terminal and cell pin. If the goal is to apply constraints that will migrate to top level ports it is required that IO Buffers manually be instanced.
+CRITICAL WARNING: [Netlist 29-160] Cannot set property 'IOSTANDARD', because the property does not exist for objects of type 'pin'. [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc:354]
+Resolution: Modify the set_property command to apply the property on the correct object type. Since the property is being applied as a scoped constraint, ensure the proper connectivity of the object port objects can be translated into pin objects. This could be due to the insertion of IO Buffers between the top level terminal and cell pin. If the goal is to apply constraints that will migrate to top level ports it is required that IO Buffers manually be instanced.
+CRITICAL WARNING: [Netlist 29-160] Cannot set property 'PACKAGE_PIN', because the property does not exist for objects of type 'pin'. [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc:355]
+Resolution: Modify the set_property command to apply the property on the correct object type. Since the property is being applied as a scoped constraint, ensure the proper connectivity of the object port objects can be translated into pin objects. This could be due to the insertion of IO Buffers between the top level terminal and cell pin. If the goal is to apply constraints that will migrate to top level ports it is required that IO Buffers manually be instanced.
+CRITICAL WARNING: [Netlist 29-160] Cannot set property 'SLEW', because the property does not exist for objects of type 'pin'. [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc:358]
+Resolution: Modify the set_property command to apply the property on the correct object type. Since the property is being applied as a scoped constraint, ensure the proper connectivity of the object port objects can be translated into pin objects. This could be due to the insertion of IO Buffers between the top level terminal and cell pin. If the goal is to apply constraints that will migrate to top level ports it is required that IO Buffers manually be instanced.
+CRITICAL WARNING: [Netlist 29-160] Cannot set property 'IOSTANDARD', because the property does not exist for objects of type 'pin'. [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc:359]
+Resolution: Modify the set_property command to apply the property on the correct object type. Since the property is being applied as a scoped constraint, ensure the proper connectivity of the object port objects can be translated into pin objects. This could be due to the insertion of IO Buffers between the top level terminal and cell pin. If the goal is to apply constraints that will migrate to top level ports it is required that IO Buffers manually be instanced.
+CRITICAL WARNING: [Netlist 29-160] Cannot set property 'PACKAGE_PIN', because the property does not exist for objects of type 'pin'. [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc:360]
+Resolution: Modify the set_property command to apply the property on the correct object type. Since the property is being applied as a scoped constraint, ensure the proper connectivity of the object port objects can be translated into pin objects. This could be due to the insertion of IO Buffers between the top level terminal and cell pin. If the goal is to apply constraints that will migrate to top level ports it is required that IO Buffers manually be instanced.
+CRITICAL WARNING: [Netlist 29-160] Cannot set property 'SLEW', because the property does not exist for objects of type 'pin'. [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc:363]
+Resolution: Modify the set_property command to apply the property on the correct object type. Since the property is being applied as a scoped constraint, ensure the proper connectivity of the object port objects can be translated into pin objects. This could be due to the insertion of IO Buffers between the top level terminal and cell pin. If the goal is to apply constraints that will migrate to top level ports it is required that IO Buffers manually be instanced.
+CRITICAL WARNING: [Netlist 29-160] Cannot set property 'IOSTANDARD', because the property does not exist for objects of type 'pin'. [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc:364]
+Resolution: Modify the set_property command to apply the property on the correct object type. Since the property is being applied as a scoped constraint, ensure the proper connectivity of the object port objects can be translated into pin objects. This could be due to the insertion of IO Buffers between the top level terminal and cell pin. If the goal is to apply constraints that will migrate to top level ports it is required that IO Buffers manually be instanced.
+CRITICAL WARNING: [Netlist 29-160] Cannot set property 'PACKAGE_PIN', because the property does not exist for objects of type 'pin'. [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc:365]
+Resolution: Modify the set_property command to apply the property on the correct object type. Since the property is being applied as a scoped constraint, ensure the proper connectivity of the object port objects can be translated into pin objects. This could be due to the insertion of IO Buffers between the top level terminal and cell pin. If the goal is to apply constraints that will migrate to top level ports it is required that IO Buffers manually be instanced.
+Finished Parsing XDC File [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/constraints/mig_7series_0.xdc] for cell 'mig_inst'
+Parsing XDC File [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'u_clk_wiz/inst'
+Finished Parsing XDC File [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'u_clk_wiz/inst'
+Parsing XDC File [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'u_clk_wiz/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:54]
+INFO: [Timing 38-2] Deriving generated clocks [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:54]
+Finished Parsing XDC File [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'u_clk_wiz/inst'
+Parsing XDC File [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/constrs_1/new/main.xdc]
+Finished Parsing XDC File [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/constrs_1/new/main.xdc]
+INFO: [Project 1-1714] 21 XPM XDC files have been applied to the design.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2520.324 ; gain = 0.000 ; free physical = 34256 ; free virtual = 45748
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 232 instances were transformed.
+  IOBUFDS_INTERMDISABLE => IOBUFDS_INTERMDISABLE (IBUFDS_INTERMDISABLE_INT(x2), INV, OBUFTDS(x2)): 4 instances
+  IOBUF_INTERMDISABLE => IOBUF_INTERMDISABLE (IBUF_INTERMDISABLE, OBUFT): 32 instances
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 26 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 1 instance 
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 2 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 161 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 6 instances
+
+14 Infos, 13 Warnings, 15 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 2520.359 ; gain = 957.641 ; free physical = 34256 ; free virtual = 45748
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a200t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.58 . Memory (MB): peak = 2577.887 ; gain = 57.527 ; free physical = 34257 ; free virtual = 45750
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+Ending Cache Timing Information Task | Checksum: 21b2941c1
+
+Time (s): cpu = 00:00:00.53 ; elapsed = 00:00:00.21 . Memory (MB): peak = 2577.887 ; gain = 0.000 ; free physical = 34209 ; free virtual = 45702
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 21b2941c1
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2872.699 ; gain = 0.000 ; free physical = 33859 ; free virtual = 45352
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 21b2941c1
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2872.699 ; gain = 0.000 ; free physical = 33859 ; free virtual = 45352
+Phase 1 Initialization | Checksum: 21b2941c1
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2872.699 ; gain = 0.000 ; free physical = 33859 ; free virtual = 45352
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+Phase 2.1 Timer Update | Checksum: 21b2941c1
+
+Time (s): cpu = 00:00:00.43 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2872.699 ; gain = 0.000 ; free physical = 33859 ; free virtual = 45352
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: 21b2941c1
+
+Time (s): cpu = 00:00:00.45 ; elapsed = 00:00:00.15 . Memory (MB): peak = 2872.699 ; gain = 0.000 ; free physical = 33911 ; free virtual = 45404
+Phase 2 Timer Update And Timing Data Collection | Checksum: 21b2941c1
+
+Time (s): cpu = 00:00:00.46 ; elapsed = 00:00:00.15 . Memory (MB): peak = 2872.699 ; gain = 0.000 ; free physical = 33911 ; free virtual = 45404
+
+Phase 3 Retarget
+INFO: [Opt 31-1851] Number of loadless carry chains removed were: 0
+INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
+INFO: [Opt 31-1566] Pulled 18 inverters resulting in an inversion of 141 pins
+INFO: [Opt 31-138] Pushed 2 inverter(s) to 4 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 1eb8bcb54
+
+Time (s): cpu = 00:00:00.78 ; elapsed = 00:00:00.39 . Memory (MB): peak = 2872.699 ; gain = 0.000 ; free physical = 33889 ; free virtual = 45382
+Retarget | Checksum: 1eb8bcb54
+INFO: [Opt 31-389] Phase Retarget created 397 cells and removed 450 cells
+INFO: [Opt 31-1021] In phase Retarget, 39 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 3 inverter(s) to 18 load pin(s).
+Phase 4 Constant propagation | Checksum: 166850b71
+
+Time (s): cpu = 00:00:00.91 ; elapsed = 00:00:00.52 . Memory (MB): peak = 2872.699 ; gain = 0.000 ; free physical = 33904 ; free virtual = 45397
+Constant propagation | Checksum: 166850b71
+INFO: [Opt 31-389] Phase Constant propagation created 142 cells and removed 414 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 1 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 5 Sweep
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2872.699 ; gain = 0.000 ; free physical = 33904 ; free virtual = 45397
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2872.699 ; gain = 0.000 ; free physical = 33889 ; free virtual = 45382
+Phase 5 Sweep | Checksum: 15e70ae50
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.65 . Memory (MB): peak = 2872.699 ; gain = 0.000 ; free physical = 33885 ; free virtual = 45378
+Sweep | Checksum: 15e70ae50
+INFO: [Opt 31-389] Phase Sweep created 11 cells and removed 235 cells
+INFO: [Opt 31-1021] In phase Sweep, 2 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 6 BUFG optimization
+INFO: [Opt 31-194] Inserted BUFG sys_clk_200mhz_IBUF_BUFG_inst to drive 64 load(s) on clock net sys_clk_200mhz_IBUF_BUFG
+INFO: [Opt 31-193] Inserted 1 BUFG(s) on clock nets
+Phase 6 BUFG optimization | Checksum: 1a1c67a4f
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.72 . Memory (MB): peak = 2904.715 ; gain = 32.016 ; free physical = 33878 ; free virtual = 45371
+BUFG optimization | Checksum: 1a1c67a4f
+INFO: [Opt 31-662] Phase BUFG optimization created 1 cells of which 1 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 1a1c67a4f
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.74 . Memory (MB): peak = 2904.715 ; gain = 32.016 ; free physical = 33878 ; free virtual = 45371
+Shift Register Optimization | Checksum: 1a1c67a4f
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 1a3ae2f30
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.77 . Memory (MB): peak = 2904.715 ; gain = 32.016 ; free physical = 33877 ; free virtual = 45370
+Post Processing Netlist | Checksum: 1a3ae2f30
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 1 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 1a35e2b30
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.9 . Memory (MB): peak = 2904.715 ; gain = 32.016 ; free physical = 33852 ; free virtual = 45345
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2904.715 ; gain = 0.000 ; free physical = 33852 ; free virtual = 45345
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 1a35e2b30
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.91 . Memory (MB): peak = 2904.715 ; gain = 32.016 ; free physical = 33858 ; free virtual = 45350
+Phase 9 Finalization | Checksum: 1a35e2b30
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.91 . Memory (MB): peak = 2904.715 ; gain = 32.016 ; free physical = 33849 ; free virtual = 45342
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |             397  |             450  |                                             39  |
+|  Constant propagation         |             142  |             414  |                                              1  |
+|  Sweep                        |              11  |             235  |                                              2  |
+|  BUFG optimization            |               1  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              1  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 1a35e2b30
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.92 . Memory (MB): peak = 2904.715 ; gain = 32.016 ; free physical = 33841 ; free virtual = 45334
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 3 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 0 newly gated: 1 Total Ports: 6
+Number of Flops added for Enable Generation: 1
+
+Ending PowerOpt Patch Enables Task | Checksum: 147123761
+
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33785 ; free virtual = 45278
+Ending Power Optimization Task | Checksum: 147123761
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 3263.965 ; gain = 359.250 ; free physical = 33794 ; free virtual = 45287
+
+Starting Final Cleanup Task
+
+Starting Logic Optimization Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+Ending Logic Optimization Task | Checksum: 1c5c5b78e
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.45 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33827 ; free virtual = 45320
+Ending Final Cleanup Task | Checksum: 1c5c5b78e
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33827 ; free virtual = 45320
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33827 ; free virtual = 45320
+Ending Netlist Obfuscation Task | Checksum: 1c5c5b78e
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33827 ; free virtual = 45320
+INFO: [Common 17-83] Releasing license: Implementation
+48 Infos, 34 Warnings, 15 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 3263.965 ; gain = 743.605 ; free physical = 33827 ; free virtual = 45320
+INFO: [Vivado 12-24828] Executing command : report_drc -file camera_vga_system_drc_opted.rpt -pb camera_vga_system_drc_opted.pb -rpx camera_vga_system_drc_opted.rpx
+Command: report_drc -file camera_vga_system_drc_opted.rpt -pb camera_vga_system_drc_opted.pb -rpx camera_vga_system_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.runs/impl_1/camera_vga_system_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33975 ; free virtual = 45470
+Wrote PlaceDB: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33975 ; free virtual = 45470
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33975 ; free virtual = 45470
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33975 ; free virtual = 45470
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33975 ; free virtual = 45471
+Wrote Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33962 ; free virtual = 45459
+Write Physdb Complete: Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33954 ; free virtual = 45451
+INFO: [Common 17-1381] The checkpoint '/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.runs/impl_1/camera_vga_system_opt.dcp' has been generated.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a200t'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+CRITICAL WARNING: [DRC AVAL-46] v7v8_mmcm_fvco_rule1: The current computed target frequency, FVCO, is out of range for cell mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/gen_mmcm.mmcm_i. The computed FVCO is 325.000 MHz. The valid FVCO range for speed grade -2 is 600MHz to 1440MHz. The cell attribute values used to compute FVCO are CLKFBOUT_MULT_F = 8.000, CLKIN1_PERIOD = 24.61539, and DIVCLK_DIVIDE = 1 (FVCO = 1000 * CLKFBOUT_MULT_F/(CLKIN1_PERIOD * DIVCLK_DIVIDE)).
+This violation may be corrected by:
+  1. The timer uses timing constraints for clock period or clock frequency that affect CLKIN1 to set cell attribute CLKIN1_PERIOD, over-riding any previous value. This may already be in place and, if so this violation will be resolved once Timing is run.  Otherwise, consider modifying timing constraints to adjust the CLKIN1_PERIOD and bring FVCO into the allowed range.
+  2. In the absence of timing constraints that affect CLKIN1, consider modifying the cell CLKIN1_PERIOD to bring FVCO into the allowed range.
+  3. If CLKIN1_PERIOD is satisfactory, modify the CLKFBOUT_MULT_F or DIVCLK_DIVIDE cell attributes to bring FVCO into the allowed range.
+  4. The MMCM configuration may be dynamically modified by use of DRP which is recognized by an ACTIVE signal on DCLK pin.
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 1 Critical Warnings, 2 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33939 ; free virtual = 45436
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: db8d3aa1
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33939 ; free virtual = 45436
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33939 ; free virtual = 45436
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+ERROR: [Place 30-574] Poor placement for routing between an IO pin and BUFG. If this sub optimal condition is acceptable for this design, you may use the CLOCK_DEDICATED_ROUTE constraint in the .xdc file to demote this message to a WARNING. However, the use of this override is highly discouraged. These examples can be used directly in the .xdc file to override this clock rule.
+	< set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets CAM_PCLK_IBUF] >
+
+	Clock Rule: rule_gclkio_bufg
+	Status: FAILED
+	Rule Description: An IOB driving a BUFG must use a CCIO in the same half side (top/bottom) of chip as the BUFG
+
+	CAM_PCLK_IBUF_inst (IBUF.O) is locked to IOB_X0Y131
+	CAM_PCLK_IBUF_BUFG_inst (BUFG.I) is provisionally placed by clockplacer on BUFGCTRL_X0Y0
+Resolution: Poor placement of an IO pin and a BUFG has resulted in the router using a non-dedicated path between the two.  There are several things that could trigger this DRC, each of which can cause unpredictable clock insertion delays that result in poor timing.  This DRC could be caused by any of the following: (a) a clock port was placed on a pin that is not a CCIO-pin (b)the BUFG has not been placed in the same half of the device or SLR as the CCIO-pin (c) a single ended clock has been placed on the N-Side of a differential pair CCIO-pin.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1ae6fced1
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.74 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33908 ; free virtual = 45406
+Phase 1 Placer Initialization | Checksum: 1ae6fced1
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.74 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33908 ; free virtual = 45406
+ERROR: [Place 30-99] Placer failed with error: 'IO Clock Placer failed'
+Please review all ERROR, CRITICAL WARNING, and WARNING messages during placement to understand the cause for failure.
+Ending Placer Task | Checksum: 196766af2
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.75 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33908 ; free virtual = 45406
+64 Infos, 41 Warnings, 16 Critical Warnings and 3 Errors encountered.
+place_design failed
+ERROR: [Common 17-69] Command failed: Placer could not place all instances
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 11 15:16:00 2026...
