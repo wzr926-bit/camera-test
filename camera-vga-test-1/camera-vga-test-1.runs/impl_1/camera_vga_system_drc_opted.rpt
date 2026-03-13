@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Wed Mar 11 15:15:57 2026
+| Date         : Fri Mar 13 16:20:56 2026
 | Host         : tsmc-System-Product-Name running 64-bit Ubuntu 22.04.3 LTS
 | Command      : report_drc -file camera_vga_system_drc_opted.rpt -pb camera_vga_system_drc_opted.pb -rpx camera_vga_system_drc_opted.rpx
 | Design       : camera_vga_system
@@ -24,59 +24,19 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max checks: <unlimited>
-             Checks found: 10
-+-----------+------------------+-----------------------------------------------------+--------+
-| Rule      | Severity         | Description                                         | Checks |
-+-----------+------------------+-----------------------------------------------------+--------+
-| PDRC-34   | Error            | MMCM_adv_ClkFrequency_div_no_dclk                   | 1      |
-| PDRC-43   | Error            | PLL_adv_ClkFrequency_div_no_dclk                    | 1      |
-| PLCK-12   | Error            | Clock Placer Checks                                 | 1      |
-| AVAL-46   | Critical Warning | v7v8_mmcm_fvco_rule1                                | 1      |
-| CFGBVS-1  | Warning          | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1      |
-| DPOP-1    | Warning          | PREG Output pipelining                              | 1      |
-| DPOP-2    | Warning          | MREG Output pipelining                              | 1      |
-| REQP-1709 | Warning          | Clock output buffering                              | 1      |
-| REQP-1839 | Warning          | RAMB36 async control check                          | 2      |
-+-----------+------------------+-----------------------------------------------------+--------+
+             Checks found: 6
++-----------+----------+-----------------------------------------------------+--------+
+| Rule      | Severity | Description                                         | Checks |
++-----------+----------+-----------------------------------------------------+--------+
+| CFGBVS-1  | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1      |
+| DPOP-1    | Warning  | PREG Output pipelining                              | 1      |
+| DPOP-2    | Warning  | MREG Output pipelining                              | 1      |
+| REQP-1709 | Warning  | Clock output buffering                              | 1      |
+| REQP-1839 | Warning  | RAMB36 async control check                          | 2      |
++-----------+----------+-----------------------------------------------------+--------+
 
 2. REPORT DETAILS
 -----------------
-PDRC-34#1 Error
-MMCM_adv_ClkFrequency_div_no_dclk  
-The computed value 325.000 MHz (CLKIN1_PERIOD, net pll_clk3) for the VCO operating frequency of the MMCME2_ADV site MMCME2_ADV_X1Y2 (cell mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/gen_mmcm.mmcm_i) falls outside the operating range of the MMCM VCO frequency for this device (600.000 - 1440.000 MHz). The computed value is (CLKFBOUT_MULT_F * 1000 / (CLKINx_PERIOD * DIVCLK_DIVIDE)). Please run update_timing to update the MMCM settings. If that does not work, adjust either the input period CLKINx_PERIOD (24.615385), multiplication factor CLKFBOUT_MULT_F (8.000000) or the division factor DIVCLK_DIVIDE (1), in order to achieve a VCO frequency within the rated operating range for this device.
-Related violations: <none>
-
-PDRC-43#1 Error
-PLL_adv_ClkFrequency_div_no_dclk  
-The computed value 650.000 MHz (CLKIN1_PERIOD, net sys_clk_200mhz_IBUF_BUFG) for the VCO operating frequency of the PLLE2_ADV site PLLE2_ADV_X1Y2 (cell mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/plle2_i) falls outside the operating range of the PLL VCO frequency for this device (800.000 - 1866.000 MHz). The computed value is (CLKFBOUT_MULT_F * 1000 / (CLKINx_PERIOD * DIVCLK_DIVIDE)). Please adjust either the input period CLKINx_PERIOD (10.000000), multiplication factor CLKFBOUT_MULT_F (13) or the division factor DIVCLK_DIVIDE (2), in order to achieve a VCO frequency within the rated operating range for this device.
-Related violations: <none>
-
-PLCK-12#1 Error
-Clock Placer Checks  
-Poor placement for routing between an IO pin and BUFG. 
-Resolution: Poor placement of an IO pin and a BUFG has resulted in the router using a non-dedicated path between the two.  There are several things that could trigger this DRC, each of which can cause unpredictable clock insertion delays that result in poor timing.  This DRC could be caused by any of the following: (a) a clock port was placed on a pin that is not a CCIO-pin (b)the BUFG has not been placed in the same half of the device or SLR as the CCIO-pin (c) a single ended clock has been placed on the N-Side of a differential pair CCIO-pin.
- If this sub optimal condition is acceptable for this design, you may use the CLOCK_DEDICATED_ROUTE constraint in the .xdc file to demote this message to a WARNING. However, the use of this override is highly discouraged. These examples can be used directly in the .xdc file to override this clock rule.
-	< set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets CAM_PCLK_IBUF] >
-
-	Clock Rule: rule_gclkio_bufg
-	Status: FAILED
-	Rule Description: An IOB driving a BUFG must use a CCIO in the same half side (top/bottom) of chip as the BUFG
-
-	CAM_PCLK_IBUF_inst (IBUF.O) is locked to Y22
-	CAM_PCLK_IBUF_BUFG_inst (BUFG.I) cannot be placed
-
-Related violations: <none>
-
-AVAL-46#1 Critical Warning
-v7v8_mmcm_fvco_rule1  
-The current computed target frequency, FVCO, is out of range for cell mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/gen_mmcm.mmcm_i. The computed FVCO is 325.000 MHz. The valid FVCO range for speed grade -2 is 600MHz to 1440MHz. The cell attribute values used to compute FVCO are CLKFBOUT_MULT_F = 8.000, CLKIN1_PERIOD = 24.61539, and DIVCLK_DIVIDE = 1 (FVCO = 1000 * CLKFBOUT_MULT_F/(CLKIN1_PERIOD * DIVCLK_DIVIDE)).
-This violation may be corrected by:
-  1. The timer uses timing constraints for clock period or clock frequency that affect CLKIN1 to set cell attribute CLKIN1_PERIOD, over-riding any previous value. This may already be in place and, if so this violation will be resolved once Timing is run.  Otherwise, consider modifying timing constraints to adjust the CLKIN1_PERIOD and bring FVCO into the allowed range.
-  2. In the absence of timing constraints that affect CLKIN1, consider modifying the cell CLKIN1_PERIOD to bring FVCO into the allowed range.
-  3. If CLKIN1_PERIOD is satisfactory, modify the CLKFBOUT_MULT_F or DIVCLK_DIVIDE cell attributes to bring FVCO into the allowed range.
-  4. The MMCM configuration may be dynamically modified by use of DRP which is recognized by an ACTIVE signal on DCLK pin.
-Related violations: <none>
-
 CFGBVS-1#1 Warning
 Missing CFGBVS and CONFIG_VOLTAGE Design Properties  
 Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_design.  Configuration bank voltage select (CFGBVS) must be set to VCCO or GND, and CONFIG_VOLTAGE must be set to the correct configuration voltage, in order to determine the I/O voltage support for the pins in bank 0.  It is suggested to specify these either using the 'Edit Device Properties' function in the GUI or directly in the XDC file using the following syntax:

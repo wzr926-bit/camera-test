@@ -105,6 +105,8 @@ verilog xil_defaultlib -i "../../../../../../tools/Xilinx2025/2025.1/data/rsb/bu
 "../../../camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_ddr_comparator.v" \
 "../../../camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/mig_7series_0_mig_sim.v" \
 "../../../camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/mig_7series_0.v" \
+"../../../camera-vga-test-1.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" \
+"../../../camera-vga-test-1.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v" \
 
 verilog xil_defaultlib "glbl.v"
 

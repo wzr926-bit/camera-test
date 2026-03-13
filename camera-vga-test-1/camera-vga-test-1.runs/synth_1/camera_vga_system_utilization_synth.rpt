@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Wed Mar 11 15:15:23 2026
+| Date         : Fri Mar 13 16:20:30 2026
 | Host         : tsmc-System-Product-Name running 64-bit Ubuntu 22.04.3 LTS
 | Command      : report_utilization -file camera_vga_system_utilization_synth.rpt -pb camera_vga_system_utilization_synth.pb
 | Design       : camera_vga_system
@@ -123,7 +123,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +------------+------+-------+------------+-----------+-------+
 |  Site Type | Used | Fixed | Prohibited | Available | Util% |
 +------------+------+-------+------------+-----------+-------+
-| BUFGCTRL   |    1 |     0 |          0 |        32 |  3.13 |
+| BUFGCTRL   |    0 |     0 |          0 |        32 |  0.00 |
 | BUFIO      |    0 |     0 |          0 |        40 |  0.00 |
 | MMCME2_ADV |    0 |     0 |          0 |        10 |  0.00 |
 | PLLE2_ADV  |    0 |     0 |          0 |        10 |  0.00 |
@@ -175,7 +175,6 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | RAMB18E1 |    1 |        Block Memory |
 | OBUFT    |    1 |                  IO |
 | DSP48E1  |    1 |    Block Arithmetic |
-| BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
 

@@ -120,14 +120,16 @@ vlog -work xil_defaultlib  -incr -v2k5 "+incdir+../../../../../../tools/Xilinx20
 "../../../camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/axi/mig_7series_v4_2_ddr_comparator.v" \
 "../../../camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/mig_7series_0_mig_sim.v" \
 "../../../camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0/user_design/rtl/mig_7series_0.v" \
+"../../../camera-vga-test-1.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" \
+"../../../camera-vga-test-1.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v" \
 
 vcom -work xil_defaultlib -93  -incr \
-"../../../../../../../../../home/tsmc/桌面/ztachip-master/HW/src/soc/peripherals/camera.vhd" \
+"../../../camera-vga-test-1.srcs/sources_1/new/camera.vhd" \
 "../../../camera-vga-test-1.srcs/sources_1/new/camera_fifo_wrapper.vhd" \
 "../../../camera-vga-test-1.srcs/sources_1/new/ddr3_writer.vhd" \
 "../../../camera-vga-test-1.srcs/sources_1/new/ddr3_reader.vhd" \
 "../../../camera-vga-test-1.srcs/sources_1/new/frame_manager.vhd" \
-"../../../../../../../../../home/tsmc/桌面/ztachip-master/HW/src/soc/peripherals/vga.vhd" \
+"../../../camera-vga-test-1.srcs/sources_1/new/vga.vhd" \
 "../../../camera-vga-test-1.srcs/sources_1/new/camera_vga_system.vhd" \
 
 vlog -work xil_defaultlib \

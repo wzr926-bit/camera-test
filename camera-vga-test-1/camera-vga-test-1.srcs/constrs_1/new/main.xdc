@@ -39,7 +39,9 @@ set_property -dict {PACKAGE_PIN AA21 IOSTANDARD LVCMOS33} [get_ports CAM_VS]
 set_property -dict {PACKAGE_PIN AA19 IOSTANDARD LVCMOS33} [get_ports CAM_RS];# CAMERA_hs
 set_property -dict {PACKAGE_PIN Y22  IOSTANDARD LVCMOS33} [get_ports CAM_PCLK]  ;# CAMERA_PCLK
 set_property -dict {PACKAGE_PIN V18  IOSTANDARD LVCMOS33} [get_ports CAM_XCLK]  ;# CAMERA_MCLK
-
+# CAM_PCLK 固定在 PMOD GPIO（非 CCIO）时，不应驱动全局 BUFG。
+# 将其作为像素采样时钟/选通信号在本地逻辑使用，避免触发 Place 30-574。
+set_property CLOCK_BUFFER_TYPE NONE [get_ports CAM_PCLK]
 set_property -dict {PACKAGE_PIN AB22 IOSTANDARD LVCMOS33} [get_ports {CAM_D[7]}]
 set_property -dict {PACKAGE_PIN W20  IOSTANDARD LVCMOS33} [get_ports {CAM_D[6]}]
 set_property -dict {PACKAGE_PIN AA20 IOSTANDARD LVCMOS33} [get_ports {CAM_D[5]}]

@@ -57,7 +57,6 @@ if {$::dispatch::connected} {
 
 OPTRACE "mig_7series_0_synth_1" START { ROLLUP_AUTO }
 set_param general.usePosixSpawnForFork 1
-set_param xicom.use_bs_reader 1
 set_param chipscope.maxJobs 4
 set_param tcl.statsThreshold 360
 set_msg_config  -id {17-179}  -suppress 
@@ -72,6 +71,7 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir {/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.cache/wt} [current_project]
 set_property parent.project_path {/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.xpr} [current_project]
+set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo {/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.cache/ip} [current_project]

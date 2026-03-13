@@ -1,0 +1,50 @@
++====================+====================+=============================================+
+| Launch Setup Clock | Launch Hold Clock  | Pin                                         |
++====================+====================+=============================================+
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_frame_manager/read_enable_reg/D           |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_frame_manager/vga_vsync_prev_reg/D        |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[7]/CE           |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[3]/CE           |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[10]/CE          |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[6]/CE           |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[2]/CE           |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[1]/CE           |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[11]/CE          |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[0]/CE           |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/words_remaining_reg[6]/R      |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/words_remaining_reg[4]/R      |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[21]/CE          |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[23]/CE          |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[22]/CE          |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[20]/CE          |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/FSM_sequential_state_reg[1]/D |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/FSM_sequential_state_reg[0]/D |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[4]/CE           |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[17]/CE          |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[16]/CE          |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[5]/CE           |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[19]/CE          |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[18]/CE          |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[14]/CE          |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[9]/CE           |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[8]/CE           |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[12]/CE          |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[13]/CE          |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[15]/CE          |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[27]/CE          |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[26]/CE          |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[25]/CE          |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[24]/CE          |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/words_remaining_reg[2]/R      |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/words_remaining_reg[1]/R      |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/words_remaining_reg[0]/R      |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/words_remaining_reg[3]/R      |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/words_remaining_reg[5]/D      |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/words_remaining_reg[6]/CE     |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/words_remaining_reg[4]/CE     |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/words_remaining_reg[7]/D      |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/words_remaining_reg[3]/CE     |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/words_remaining_reg[0]/CE     |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/words_remaining_reg[1]/CE     |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/words_remaining_reg[2]/CE     |
++--------------------+--------------------+---------------------------------------------+

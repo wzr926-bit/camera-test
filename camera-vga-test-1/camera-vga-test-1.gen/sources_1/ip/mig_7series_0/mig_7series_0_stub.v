@@ -2,7 +2,7 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-// Date        : Thu Mar  5 17:12:26 2026
+// Date        : Fri Mar 13 16:19:53 2026
 // Host        : tsmc-System-Product-Name running 64-bit Ubuntu 22.04.3 LTS
 // Command     : write_verilog -force -mode synth_stub {/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado
 //               project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0_stub.v}

@@ -7,7 +7,7 @@
   **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
   **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
   **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-  **** Start of session at: Wed Mar 11 15:15:37 2026
+  **** Start of session at: Fri Mar 13 16:20:36 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -19,7 +19,7 @@ INFO: [Device 21-403] Loading part xc7a200tfbg484-2
 INFO: [Project 1-5699] Read binary netlist with skipMacroContent - 1
 INFO: [Project 1-454] Reading design checkpoint '/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/mig_7series_0/mig_7series_0.dcp' for cell 'mig_inst'
 INFO: [Project 1-454] Reading design checkpoint '/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.dcp' for cell 'u_clk_wiz'
-Netlist sorting complete. Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.08 . Memory (MB): peak = 1748.711 ; gain = 0.000 ; free physical = 34769 ; free virtual = 46261
+Netlist sorting complete. Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.08 . Memory (MB): peak = 1750.707 ; gain = 0.000 ; free physical = 1780 ; free virtual = 41621
 INFO: [Netlist 29-17] Analyzing 554 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2025.1
@@ -82,7 +82,7 @@ Parsing XDC File [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado pr
 Finished Parsing XDC File [/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.srcs/constrs_1/new/main.xdc]
 INFO: [Project 1-1714] 21 XPM XDC files have been applied to the design.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2520.324 ; gain = 0.000 ; free physical = 34256 ; free virtual = 45748
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2520.320 ; gain = 0.000 ; free physical = 1361 ; free virtual = 41204
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 232 instances were transformed.
   IOBUFDS_INTERMDISABLE => IOBUFDS_INTERMDISABLE (IBUFDS_INTERMDISABLE_INT(x2), INV, OBUFTDS(x2)): 4 instances
@@ -96,7 +96,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 sh: 1: cannot create /media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado: Is a directory
 14 Infos, 13 Warnings, 15 Critical Warnings and 0 Errors encountered.
 link_design completed successfully
-link_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 2520.359 ; gain = 957.641 ; free physical = 34256 ; free virtual = 45748
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.statsThreshold
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a200t'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a200t'
@@ -107,52 +108,45 @@ INFO: [DRC 23-27] Running DRC with 8 threads
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.58 . Memory (MB): peak = 2577.887 ; gain = 57.527 ; free physical = 34257 ; free virtual = 45750
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.55 . Memory (MB): peak = 2557.008 ; gain = 36.652 ; free physical = 1361 ; free virtual = 41203
 
 Starting Cache Timing Information Task
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-Ending Cache Timing Information Task | Checksum: 21b2941c1
+Ending Cache Timing Information Task | Checksum: 1d22a6e0e
 
-Time (s): cpu = 00:00:00.53 ; elapsed = 00:00:00.21 . Memory (MB): peak = 2577.887 ; gain = 0.000 ; free physical = 34209 ; free virtual = 45702
+Time (s): cpu = 00:00:00.54 ; elapsed = 00:00:00.22 . Memory (MB): peak = 2557.008 ; gain = 0.000 ; free physical = 1357 ; free virtual = 41200
 
 Starting Logic Optimization Task
 
 Phase 1 Initialization
 
 Phase 1.1 Core Generation And Design Setup
-Phase 1.1 Core Generation And Design Setup | Checksum: 21b2941c1
+Phase 1.1 Core Generation And Design Setup | Checksum: 1d22a6e0e
 
-Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2872.699 ; gain = 0.000 ; free physical = 33859 ; free virtual = 45352
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2874.906 ; gain = 0.000 ; free physical = 1332 ; free virtual = 41175
 
 Phase 1.2 Setup Constraints And Sort Netlist
-Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 21b2941c1
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 1d22a6e0e
 
-Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2872.699 ; gain = 0.000 ; free physical = 33859 ; free virtual = 45352
-Phase 1 Initialization | Checksum: 21b2941c1
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2874.906 ; gain = 0.000 ; free physical = 1332 ; free virtual = 41175
+Phase 1 Initialization | Checksum: 1d22a6e0e
 
-Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2872.699 ; gain = 0.000 ; free physical = 33859 ; free virtual = 45352
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2874.906 ; gain = 0.000 ; free physical = 1332 ; free virtual = 41175
 
 Phase 2 Timer Update And Timing Data Collection
 
 Phase 2.1 Timer Update
-Phase 2.1 Timer Update | Checksum: 21b2941c1
+Phase 2.1 Timer Update | Checksum: 1d22a6e0e
 
-Time (s): cpu = 00:00:00.43 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2872.699 ; gain = 0.000 ; free physical = 33859 ; free virtual = 45352
+Time (s): cpu = 00:00:00.44 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2874.906 ; gain = 0.000 ; free physical = 1359 ; free virtual = 41201
 
 Phase 2.2 Timing Data Collection
-Phase 2.2 Timing Data Collection | Checksum: 21b2941c1
+Phase 2.2 Timing Data Collection | Checksum: 1d22a6e0e
 
-Time (s): cpu = 00:00:00.45 ; elapsed = 00:00:00.15 . Memory (MB): peak = 2872.699 ; gain = 0.000 ; free physical = 33911 ; free virtual = 45404
-Phase 2 Timer Update And Timing Data Collection | Checksum: 21b2941c1
+Time (s): cpu = 00:00:00.46 ; elapsed = 00:00:00.15 . Memory (MB): peak = 2874.906 ; gain = 0.000 ; free physical = 1343 ; free virtual = 41186
+Phase 2 Timer Update And Timing Data Collection | Checksum: 1d22a6e0e
 
-Time (s): cpu = 00:00:00.46 ; elapsed = 00:00:00.15 . Memory (MB): peak = 2872.699 ; gain = 0.000 ; free physical = 33911 ; free virtual = 45404
+Time (s): cpu = 00:00:00.47 ; elapsed = 00:00:00.15 . Memory (MB): peak = 2874.906 ; gain = 0.000 ; free physical = 1343 ; free virtual = 41186
 
 Phase 3 Retarget
 INFO: [Opt 31-1851] Number of loadless carry chains removed were: 0
@@ -160,77 +154,77 @@ INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transfo
 INFO: [Opt 31-1566] Pulled 18 inverters resulting in an inversion of 141 pins
 INFO: [Opt 31-138] Pushed 2 inverter(s) to 4 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 3 Retarget | Checksum: 1eb8bcb54
+Phase 3 Retarget | Checksum: 13207af6c
 
-Time (s): cpu = 00:00:00.78 ; elapsed = 00:00:00.39 . Memory (MB): peak = 2872.699 ; gain = 0.000 ; free physical = 33889 ; free virtual = 45382
-Retarget | Checksum: 1eb8bcb54
+Time (s): cpu = 00:00:00.79 ; elapsed = 00:00:00.39 . Memory (MB): peak = 2874.906 ; gain = 0.000 ; free physical = 1369 ; free virtual = 41211
+Retarget | Checksum: 13207af6c
 INFO: [Opt 31-389] Phase Retarget created 397 cells and removed 450 cells
 INFO: [Opt 31-1021] In phase Retarget, 39 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 4 Constant propagation
 INFO: [Opt 31-138] Pushed 3 inverter(s) to 18 load pin(s).
-Phase 4 Constant propagation | Checksum: 166850b71
+Phase 4 Constant propagation | Checksum: 1e25bf7a9
 
-Time (s): cpu = 00:00:00.91 ; elapsed = 00:00:00.52 . Memory (MB): peak = 2872.699 ; gain = 0.000 ; free physical = 33904 ; free virtual = 45397
-Constant propagation | Checksum: 166850b71
+Time (s): cpu = 00:00:00.92 ; elapsed = 00:00:00.51 . Memory (MB): peak = 2874.906 ; gain = 0.000 ; free physical = 1345 ; free virtual = 41188
+Constant propagation | Checksum: 1e25bf7a9
 INFO: [Opt 31-389] Phase Constant propagation created 142 cells and removed 414 cells
 INFO: [Opt 31-1021] In phase Constant propagation, 1 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 5 Sweep
 INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
-Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2872.699 ; gain = 0.000 ; free physical = 33904 ; free virtual = 45397
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2874.906 ; gain = 0.000 ; free physical = 1372 ; free virtual = 41214
 INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
-Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2872.699 ; gain = 0.000 ; free physical = 33889 ; free virtual = 45382
-Phase 5 Sweep | Checksum: 15e70ae50
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2874.906 ; gain = 0.000 ; free physical = 1356 ; free virtual = 41199
+Phase 5 Sweep | Checksum: 1aa3ba19a
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.65 . Memory (MB): peak = 2872.699 ; gain = 0.000 ; free physical = 33885 ; free virtual = 45378
-Sweep | Checksum: 15e70ae50
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.65 . Memory (MB): peak = 2874.906 ; gain = 0.000 ; free physical = 1345 ; free virtual = 41188
+Sweep | Checksum: 1aa3ba19a
 INFO: [Opt 31-389] Phase Sweep created 11 cells and removed 235 cells
 INFO: [Opt 31-1021] In phase Sweep, 2 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 6 BUFG optimization
 INFO: [Opt 31-194] Inserted BUFG sys_clk_200mhz_IBUF_BUFG_inst to drive 64 load(s) on clock net sys_clk_200mhz_IBUF_BUFG
 INFO: [Opt 31-193] Inserted 1 BUFG(s) on clock nets
-Phase 6 BUFG optimization | Checksum: 1a1c67a4f
+Phase 6 BUFG optimization | Checksum: 1cf81e6be
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.72 . Memory (MB): peak = 2904.715 ; gain = 32.016 ; free physical = 33878 ; free virtual = 45371
-BUFG optimization | Checksum: 1a1c67a4f
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.72 . Memory (MB): peak = 2906.922 ; gain = 32.016 ; free physical = 1345 ; free virtual = 41188
+BUFG optimization | Checksum: 1cf81e6be
 INFO: [Opt 31-662] Phase BUFG optimization created 1 cells of which 1 are BUFGs and removed 0 cells.
 
 Phase 7 Shift Register Optimization
 INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
-Phase 7 Shift Register Optimization | Checksum: 1a1c67a4f
+Phase 7 Shift Register Optimization | Checksum: 1cf81e6be
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.74 . Memory (MB): peak = 2904.715 ; gain = 32.016 ; free physical = 33878 ; free virtual = 45371
-Shift Register Optimization | Checksum: 1a1c67a4f
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.74 . Memory (MB): peak = 2906.922 ; gain = 32.016 ; free physical = 1343 ; free virtual = 41185
+Shift Register Optimization | Checksum: 1cf81e6be
 INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Phase 8 Post Processing Netlist
-Phase 8 Post Processing Netlist | Checksum: 1a3ae2f30
+Phase 8 Post Processing Netlist | Checksum: 16d913bcf
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.77 . Memory (MB): peak = 2904.715 ; gain = 32.016 ; free physical = 33877 ; free virtual = 45370
-Post Processing Netlist | Checksum: 1a3ae2f30
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.77 . Memory (MB): peak = 2906.922 ; gain = 32.016 ; free physical = 1341 ; free virtual = 41183
+Post Processing Netlist | Checksum: 16d913bcf
 INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
 INFO: [Opt 31-1021] In phase Post Processing Netlist, 1 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 9 Finalization
 
 Phase 9.1 Finalizing Design Cores and Updating Shapes
-Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 1a35e2b30
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 17f2d7502
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.9 . Memory (MB): peak = 2904.715 ; gain = 32.016 ; free physical = 33852 ; free virtual = 45345
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.9 . Memory (MB): peak = 2906.922 ; gain = 32.016 ; free physical = 1349 ; free virtual = 41192
 
 Phase 9.2 Verifying Netlist Connectivity
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2904.715 ; gain = 0.000 ; free physical = 33852 ; free virtual = 45345
-Phase 9.2 Verifying Netlist Connectivity | Checksum: 1a35e2b30
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2906.922 ; gain = 0.000 ; free physical = 1348 ; free virtual = 41191
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 17f2d7502
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.91 . Memory (MB): peak = 2904.715 ; gain = 32.016 ; free physical = 33858 ; free virtual = 45350
-Phase 9 Finalization | Checksum: 1a35e2b30
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.91 . Memory (MB): peak = 2906.922 ; gain = 32.016 ; free physical = 1348 ; free virtual = 41191
+Phase 9 Finalization | Checksum: 17f2d7502
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.91 . Memory (MB): peak = 2904.715 ; gain = 32.016 ; free physical = 33849 ; free virtual = 45342
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.92 . Memory (MB): peak = 2906.922 ; gain = 32.016 ; free physical = 1348 ; free virtual = 41191
 Opt_design Change Summary
 =========================
 
@@ -247,22 +241,15 @@ Opt_design Change Summary
 -------------------------------------------------------------------------------------------------------------------------
 
 
-Ending Logic Optimization Task | Checksum: 1a35e2b30
+Ending Logic Optimization Task | Checksum: 17f2d7502
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.92 . Memory (MB): peak = 2904.715 ; gain = 32.016 ; free physical = 33841 ; free virtual = 45334
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.92 . Memory (MB): peak = 2906.922 ; gain = 32.016 ; free physical = 1348 ; free virtual = 41191
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
 INFO: [Pwropt 34-9] Applying IDT optimizations ...
 INFO: [Pwropt 34-10] Applying ODC optimizations ...
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
 Running Vector-less Activity Propagation...
 
 Finished Running Vector-less Activity Propagation
@@ -274,40 +261,34 @@ INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
 Number of BRAM Ports augmented: 0 newly gated: 1 Total Ports: 6
 Number of Flops added for Enable Generation: 1
 
-Ending PowerOpt Patch Enables Task | Checksum: 147123761
+Ending PowerOpt Patch Enables Task | Checksum: 1eb3f5702
 
-Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33785 ; free virtual = 45278
-Ending Power Optimization Task | Checksum: 147123761
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1396 ; free virtual = 41239
+Ending Power Optimization Task | Checksum: 1eb3f5702
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 3263.965 ; gain = 359.250 ; free physical = 33794 ; free virtual = 45287
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 3264.156 ; gain = 357.234 ; free physical = 1396 ; free virtual = 41239
 
 Starting Final Cleanup Task
 
 Starting Logic Optimization Task
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-Ending Logic Optimization Task | Checksum: 1c5c5b78e
+Ending Logic Optimization Task | Checksum: 21c10ec9e
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.45 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33827 ; free virtual = 45320
-Ending Final Cleanup Task | Checksum: 1c5c5b78e
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.44 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1368 ; free virtual = 41212
+Ending Final Cleanup Task | Checksum: 21c10ec9e
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33827 ; free virtual = 45320
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1368 ; free virtual = 41211
 
 Starting Netlist Obfuscation Task
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33827 ; free virtual = 45320
-Ending Netlist Obfuscation Task | Checksum: 1c5c5b78e
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1368 ; free virtual = 41211
+Ending Netlist Obfuscation Task | Checksum: 21c10ec9e
 
-Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33827 ; free virtual = 45320
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1368 ; free virtual = 41211
 INFO: [Common 17-83] Releasing license: Implementation
-48 Infos, 34 Warnings, 15 Critical Warnings and 0 Errors encountered.
+49 Infos, 13 Warnings, 15 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 3263.965 ; gain = 743.605 ; free physical = 33827 ; free virtual = 45320
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.statsThreshold
 INFO: [Vivado 12-24828] Executing command : report_drc -file camera_vga_system_drc_opted.rpt -pb camera_vga_system_drc_opted.pb -rpx camera_vga_system_drc_opted.rpx
 Command: report_drc -file camera_vga_system_drc_opted.rpt -pb camera_vga_system_drc_opted.pb -rpx camera_vga_system_drc_opted.rpx
 INFO: [IP_Flow 19-1839] IP Catalog is up to date.
@@ -315,24 +296,17 @@ INFO: [DRC 23-27] Running DRC with 8 threads
 INFO: [Vivado_Tcl 2-168] The results of DRC are in file /media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.runs/impl_1/camera_vga_system_drc_opted.rpt.
 report_drc completed successfully
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
-WARNING: [Timing 38-305] Skipping automatic recalibration of MEMREFCLK_PERIOD on instance mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_1.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/phaser_out because the value of 6.154 obtained from clock propagation is outside the allowed range.
 INFO: [Timing 38-480] Writing timing data to binary archive.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33975 ; free virtual = 45470
-Wrote PlaceDB: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33975 ; free virtual = 45470
-Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33975 ; free virtual = 45470
+Wrote PlaceDB: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1361 ; free virtual = 41205
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1361 ; free virtual = 41205
 Writing XDEF routing.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1361 ; free virtual = 41205
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Wrote RouteStorage: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33975 ; free virtual = 45470
-Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33975 ; free virtual = 45471
-Wrote Device Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33962 ; free virtual = 45459
-Write Physdb Complete: Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33954 ; free virtual = 45451
+Wrote RouteStorage: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1359 ; free virtual = 41205
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1359 ; free virtual = 41205
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1359 ; free virtual = 41205
+Write Physdb Complete: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1359 ; free virtual = 41205
 INFO: [Common 17-1381] The checkpoint '/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.runs/impl_1/camera_vga_system_opt.dcp' has been generated.
 Command: place_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a200t'
@@ -343,13 +317,7 @@ INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
 INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
 Running DRC as a precondition to command place_design
 INFO: [DRC 23-27] Running DRC with 8 threads
-CRITICAL WARNING: [DRC AVAL-46] v7v8_mmcm_fvco_rule1: The current computed target frequency, FVCO, is out of range for cell mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/gen_mmcm.mmcm_i. The computed FVCO is 325.000 MHz. The valid FVCO range for speed grade -2 is 600MHz to 1440MHz. The cell attribute values used to compute FVCO are CLKFBOUT_MULT_F = 8.000, CLKIN1_PERIOD = 24.61539, and DIVCLK_DIVIDE = 1 (FVCO = 1000 * CLKFBOUT_MULT_F/(CLKIN1_PERIOD * DIVCLK_DIVIDE)).
-This violation may be corrected by:
-  1. The timer uses timing constraints for clock period or clock frequency that affect CLKIN1 to set cell attribute CLKIN1_PERIOD, over-riding any previous value. This may already be in place and, if so this violation will be resolved once Timing is run.  Otherwise, consider modifying timing constraints to adjust the CLKIN1_PERIOD and bring FVCO into the allowed range.
-  2. In the absence of timing constraints that affect CLKIN1, consider modifying the cell CLKIN1_PERIOD to bring FVCO into the allowed range.
-  3. If CLKIN1_PERIOD is satisfactory, modify the CLKFBOUT_MULT_F or DIVCLK_DIVIDE cell attributes to bring FVCO into the allowed range.
-  4. The MMCM configuration may be dynamically modified by use of DRP which is recognized by an ACTIVE signal on DCLK pin.
-INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 1 Critical Warnings, 2 Warnings
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 2 Warnings
 INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
 INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
 
@@ -358,35 +326,727 @@ Starting Placer Task
 Phase 1 Placer Initialization
 
 Phase 1.1 Placer Initialization Netlist Sorting
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33939 ; free virtual = 45436
-Phase 1.1 Placer Initialization Netlist Sorting | Checksum: db8d3aa1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1345 ; free virtual = 41192
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 16f55bf0a
 
-Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33939 ; free virtual = 45436
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33939 ; free virtual = 45436
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1354 ; free virtual = 41201
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1354 ; free virtual = 41201
 
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
-ERROR: [Place 30-574] Poor placement for routing between an IO pin and BUFG. If this sub optimal condition is acceptable for this design, you may use the CLOCK_DEDICATED_ROUTE constraint in the .xdc file to demote this message to a WARNING. However, the use of this override is highly discouraged. These examples can be used directly in the .xdc file to override this clock rule.
-	< set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets CAM_PCLK_IBUF] >
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1e99315d7
 
-	Clock Rule: rule_gclkio_bufg
-	Status: FAILED
-	Rule Description: An IOB driving a BUFG must use a CCIO in the same half side (top/bottom) of chip as the BUFG
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.67 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1345 ; free virtual = 41192
 
-	CAM_PCLK_IBUF_inst (IBUF.O) is locked to IOB_X0Y131
-	CAM_PCLK_IBUF_BUFG_inst (BUFG.I) is provisionally placed by clockplacer on BUFGCTRL_X0Y0
-Resolution: Poor placement of an IO pin and a BUFG has resulted in the router using a non-dedicated path between the two.  There are several things that could trigger this DRC, each of which can cause unpredictable clock insertion delays that result in poor timing.  This DRC could be caused by any of the following: (a) a clock port was placed on a pin that is not a CCIO-pin (b)the BUFG has not been placed in the same half of the device or SLR as the CCIO-pin (c) a single ended clock has been placed on the N-Side of a differential pair CCIO-pin.
-Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1ae6fced1
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 1a98a5b3a
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.74 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33908 ; free virtual = 45406
-Phase 1 Placer Initialization | Checksum: 1ae6fced1
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1346 ; free virtual = 41193
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.74 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33908 ; free virtual = 45406
-ERROR: [Place 30-99] Placer failed with error: 'IO Clock Placer failed'
-Please review all ERROR, CRITICAL WARNING, and WARNING messages during placement to understand the cause for failure.
-Ending Placer Task | Checksum: 196766af2
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1a98a5b3a
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.75 . Memory (MB): peak = 3263.965 ; gain = 0.000 ; free physical = 33908 ; free virtual = 45406
-64 Infos, 41 Warnings, 16 Critical Warnings and 3 Errors encountered.
-place_design failed
-ERROR: [Common 17-69] Command failed: Placer could not place all instances
-INFO: [Common 17-206] Exiting Vivado at Wed Mar 11 15:16:00 2026...
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1346 ; free virtual = 41193
+Phase 1 Placer Initialization | Checksum: 1a98a5b3a
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1345 ; free virtual = 41192
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 1bb891034
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:03 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 2018 ; free virtual = 41865
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 1880f81ed
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:03 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 2037 ; free virtual = 41885
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 1c9e7b296
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:03 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 2037 ; free virtual = 41884
+
+Phase 2.4 Global Place Phase1
+Phase 2.4 Global Place Phase1 | Checksum: db204c84
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:07 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 2256 ; free virtual = 42094
+
+Phase 2.5 Global Place Phase2
+
+Phase 2.5.1 UpdateTiming Before Physical Synthesis
+Phase 2.5.1 UpdateTiming Before Physical Synthesis | Checksum: 1acc67220
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:07 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 2205 ; free virtual = 42043
+
+Phase 2.5.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 1014 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 447 nets or LUTs. Breaked 0 LUT, combined 447 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-670] No setup violation found.  DSP Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register to Pipeline Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  URAM Register Optimization was not performed.
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 2133 ; free virtual = 41971
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            0  |            447  |                   447  |           0  |           1  |  00:00:00  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            0  |            447  |                   447  |           0  |           4  |  00:00:00  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.5.2 Physical Synthesis In Placer | Checksum: 1f4a2e59c
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:08 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 2010 ; free virtual = 41848
+Phase 2.5 Global Place Phase2 | Checksum: 25cd9c2b8
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:08 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1955 ; free virtual = 41793
+Phase 2 Global Placement | Checksum: 25cd9c2b8
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:08 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1965 ; free virtual = 41803
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 23f83dc5b
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:09 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1945 ; free virtual = 41784
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 2c9255e76
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:10 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1854 ; free virtual = 41693
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 2cccd9d40
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:10 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1830 ; free virtual = 41669
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 2e0e1bb92
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:10 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1830 ; free virtual = 41669
+
+Phase 3.5 Small Shape Detail Placement
+Phase 3.5 Small Shape Detail Placement | Checksum: 26afe77f0
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:12 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1680 ; free virtual = 41518
+
+Phase 3.6 Re-assign LUT pins
+Phase 3.6 Re-assign LUT pins | Checksum: 200bea512
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:12 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1590 ; free virtual = 41429
+
+Phase 3.7 Pipeline Register Optimization
+Phase 3.7 Pipeline Register Optimization | Checksum: 28a81d8a8
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:12 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1583 ; free virtual = 41421
+Phase 3 Detail Placement | Checksum: 28a81d8a8
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:12 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1572 ; free virtual = 41410
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 22799a397
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=1.291 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1d58893fa
+
+Time (s): cpu = 00:00:00.42 ; elapsed = 00:00:00.1 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1474 ; free virtual = 41313
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: 21cc6bca8
+
+Time (s): cpu = 00:00:00.53 ; elapsed = 00:00:00.15 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1505 ; free virtual = 41344
+Phase 4.1.1.1 BUFG Insertion | Checksum: 22799a397
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:14 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1520 ; free virtual = 41359
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=1.291. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 19eabce4b
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:14 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1514 ; free virtual = 41353
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:14 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1514 ; free virtual = 41353
+Phase 4.1 Post Commit Optimization | Checksum: 19eabce4b
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:14 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1527 ; free virtual = 41365
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 19eabce4b
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:14 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1484 ; free virtual = 41323
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                1x1|                1x1|
+|___________|___________________|___________________|
+|      South|                1x1|                1x1|
+|___________|___________________|___________________|
+|       East|                1x1|                2x2|
+|___________|___________________|___________________|
+|       West|                1x1|                1x1|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 19eabce4b
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:14 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1481 ; free virtual = 41320
+Phase 4.3 Placer Reporting | Checksum: 19eabce4b
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:14 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1466 ; free virtual = 41305
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1466 ; free virtual = 41305
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:14 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1466 ; free virtual = 41305
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 14c469338
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:14 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1469 ; free virtual = 41308
+Ending Placer Task | Checksum: 11da65401
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:14 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1466 ; free virtual = 41305
+85 Infos, 13 Warnings, 15 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.statsThreshold
+INFO: [Vivado 12-24838] Running report commands "report_control_sets, report_io, report_utilization" in parallel.
+Running report generation with 3 threads.
+INFO: [Vivado 12-24828] Executing command : report_control_sets -verbose -file camera_vga_system_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.21 ; elapsed = 00:00:00.11 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1443 ; free virtual = 41282
+INFO: [Vivado 12-24828] Executing command : report_io -file camera_vga_system_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.3 ; elapsed = 00:00:00.17 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1431 ; free virtual = 41270
+INFO: [Vivado 12-24828] Executing command : report_utilization -file camera_vga_system_utilization_placed.rpt -pb camera_vga_system_utilization_placed.pb
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1415 ; free virtual = 41257
+Wrote PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.42 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1437 ; free virtual = 41297
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1437 ; free virtual = 41297
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1452 ; free virtual = 41312
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1451 ; free virtual = 41312
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1451 ; free virtual = 41313
+Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.45 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1451 ; free virtual = 41313
+INFO: [Common 17-1381] The checkpoint '/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.runs/impl_1/camera_vga_system_placed.dcp' has been generated.
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a200t'
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.62 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1363 ; free virtual = 41207
+INFO: [Vivado_Tcl 4-2279] Estimated Timing Summary | WNS= 1.091 | TNS= 0.000 | 
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. All physical synthesis setup optimizations will be skipped.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+97 Infos, 13 Warnings, 15 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.statsThreshold
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1388 ; free virtual = 41235
+Wrote PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.4 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1360 ; free virtual = 41225
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1360 ; free virtual = 41225
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1360 ; free virtual = 41225
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1360 ; free virtual = 41226
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1360 ; free virtual = 41227
+Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.43 . Memory (MB): peak = 3264.156 ; gain = 0.000 ; free physical = 1360 ; free virtual = 41227
+INFO: [Common 17-1381] The checkpoint '/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.runs/impl_1/camera_vga_system_physopt.dcp' has been generated.
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a200t'
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: 66b151cd ConstDB: 0 ShapeSum: 1eda16d0 RouteDB: 981aeb64
+Post Restoration Checksum: NetGraph: 89840d5d | NumContArr: e804a336 | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 2f6daa5cd
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:27 . Memory (MB): peak = 3287.230 ; gain = 23.074 ; free physical = 1364 ; free virtual = 41216
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 2f6daa5cd
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:27 . Memory (MB): peak = 3287.230 ; gain = 23.074 ; free physical = 1345 ; free virtual = 41197
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 2f6daa5cd
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:27 . Memory (MB): peak = 3287.230 ; gain = 23.074 ; free physical = 1345 ; free virtual = 41197
+ Number of Nodes with overlaps = 0
+
+Phase 2.3 Update Timing
+Phase 2.3 Update Timing | Checksum: 2a88d7cac
+
+Time (s): cpu = 00:00:39 ; elapsed = 00:00:29 . Memory (MB): peak = 3354.988 ; gain = 90.832 ; free physical = 1353 ; free virtual = 41206
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.290  | TNS=0.000  | WHS=-2.702 | THS=-771.297|
+
+
+Phase 2.4 Update Timing for Bus Skew
+
+Phase 2.4.1 Update Timing
+Phase 2.4.1 Update Timing | Checksum: 278a65b46
+
+Time (s): cpu = 00:00:42 ; elapsed = 00:00:30 . Memory (MB): peak = 3354.988 ; gain = 90.832 ; free physical = 1354 ; free virtual = 41207
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.290  | TNS=0.000  | WHS=-5.258 | THS=-229.462|
+
+Phase 2.4 Update Timing for Bus Skew | Checksum: 239f2ae0c
+
+Time (s): cpu = 00:00:42 ; elapsed = 00:00:30 . Memory (MB): peak = 3354.988 ; gain = 90.832 ; free physical = 1347 ; free virtual = 41199
+
+Phase 2.5 Soft Constraint Pins - Fast Budgeting
+Phase 2.5 Soft Constraint Pins - Fast Budgeting | Checksum: 239f2ae0c
+
+Time (s): cpu = 00:00:42 ; elapsed = 00:00:30 . Memory (MB): peak = 3354.988 ; gain = 90.832 ; free physical = 1345 ; free virtual = 41197
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.00325944 %
+  Global Horizontal Routing Utilization  = 0.00783212 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 14919
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 14918
+  Number of Partially Routed Nets     = 1
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 2bf0a5c7b
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:30 . Memory (MB): peak = 3369.770 ; gain = 105.613 ; free physical = 1345 ; free virtual = 41198
+
+Phase 3 Global Routing
+Phase 3 Global Routing | Checksum: 2bf0a5c7b
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:30 . Memory (MB): peak = 3369.770 ; gain = 105.613 ; free physical = 1345 ; free virtual = 41198
+
+Phase 4 Initial Routing
+
+Phase 4.1 Initial Net Routing Pass
+Phase 4.1 Initial Net Routing Pass | Checksum: 1eefb9448
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:31 . Memory (MB): peak = 3514.770 ; gain = 250.613 ; free physical = 1346 ; free virtual = 41199
+Phase 4 Initial Routing | Checksum: 1eefb9448
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:31 . Memory (MB): peak = 3514.770 ; gain = 250.613 ; free physical = 1346 ; free virtual = 41199
+INFO: [Route 35-580] Design has 46 pins with tight setup and hold constraints.
+
+The top 5 pins with tight setup and hold constraints:
+
++====================+====================+======================================+
+| Launch Setup Clock | Launch Hold Clock  | Pin                                  |
++====================+====================+======================================+
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_frame_manager/read_enable_reg/D    |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_frame_manager/vga_vsync_prev_reg/D |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[7]/CE    |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[3]/CE    |
+| clk_out1_clk_wiz_0 | clk_out1_clk_wiz_0 | u_ddr3_reader/line_addr_reg[10]/CE   |
++--------------------+--------------------+--------------------------------------+
+
+File with complete list of pins: tight_setup_hold_pins.txt
+
+
+Phase 5 Rip-up And Reroute
+
+Phase 5.1 Global Iteration 0
+ Number of Nodes with overlaps = 1004
+ Number of Nodes with overlaps = 11
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-1.793 | TNS=-32.576| WHS=N/A    | THS=N/A    |
+
+Phase 5.1 Global Iteration 0 | Checksum: 250bfa409
+
+Time (s): cpu = 00:00:58 ; elapsed = 00:00:38 . Memory (MB): peak = 3514.770 ; gain = 250.613 ; free physical = 1384 ; free virtual = 41238
+
+Phase 5.2 Global Iteration 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-1.842 | TNS=-33.109| WHS=N/A    | THS=N/A    |
+
+Phase 5.2 Global Iteration 1 | Checksum: 1bc7e61fc
+
+Time (s): cpu = 00:00:59 ; elapsed = 00:00:38 . Memory (MB): peak = 3514.770 ; gain = 250.613 ; free physical = 1369 ; free virtual = 41222
+Phase 5 Rip-up And Reroute | Checksum: 1bc7e61fc
+
+Time (s): cpu = 00:00:59 ; elapsed = 00:00:38 . Memory (MB): peak = 3514.770 ; gain = 250.613 ; free physical = 1369 ; free virtual = 41222
+
+Phase 6 Delay and Skew Optimization
+
+Phase 6.1 Delay CleanUp
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 2685151b3
+
+Time (s): cpu = 00:00:59 ; elapsed = 00:00:38 . Memory (MB): peak = 3514.770 ; gain = 250.613 ; free physical = 1351 ; free virtual = 41205
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-1.793 | TNS=-32.576| WHS=N/A    | THS=N/A    |
+
+Phase 6.1 Delay CleanUp | Checksum: 2108110e5
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:38 . Memory (MB): peak = 3514.770 ; gain = 250.613 ; free physical = 1345 ; free virtual = 41198
+
+Phase 6.2 Clock Skew Optimization
+Phase 6.2 Clock Skew Optimization | Checksum: 2108110e5
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:38 . Memory (MB): peak = 3514.770 ; gain = 250.613 ; free physical = 1345 ; free virtual = 41198
+Phase 6 Delay and Skew Optimization | Checksum: 2108110e5
+
+Time (s): cpu = 00:01:00 ; elapsed = 00:00:38 . Memory (MB): peak = 3514.770 ; gain = 250.613 ; free physical = 1345 ; free virtual = 41198
+
+Phase 7 Post Hold Fix
+
+Phase 7.1 Hold Fix Iter
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-2.320 | TNS=-79.761| WHS=-1.251 | THS=-35.524|
+
+Phase 7.1 Hold Fix Iter | Checksum: 2325a5569
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:41 . Memory (MB): peak = 3592.770 ; gain = 328.613 ; free physical = 1358 ; free virtual = 41211
+
+Phase 7.2 Non Free Resource Hold Fix Iter
+Phase 7.2 Non Free Resource Hold Fix Iter | Checksum: 1f51cd247
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:41 . Memory (MB): peak = 3592.770 ; gain = 328.613 ; free physical = 1345 ; free virtual = 41199
+WARNING: [Route 35-468] The router encountered 21 pins that are both setup-critical and hold-critical and tried to fix hold violations at the expense of setup slack. Such pins are:
+	u_ddr3_reader/line_addr_reg[0]/CE
+	u_ddr3_reader/line_addr_reg[12]/CE
+	u_ddr3_reader/line_addr_reg[13]/CE
+	u_ddr3_reader/line_addr_reg[16]/CE
+	u_ddr3_reader/line_addr_reg[20]/CE
+	u_ddr3_reader/line_addr_reg[24]/CE
+	u_ddr3_reader/words_remaining_reg[0]/CE
+	u_ddr3_reader/words_remaining_reg[4]/CE
+	u_ddr3_reader/words_remaining[5]_i_1/I2
+	u_ddr3_reader/words_remaining[7]_i_1/I2
+	.. and 11 more pins.
+
+Phase 7 Post Hold Fix | Checksum: 1f51cd247
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:41 . Memory (MB): peak = 3592.770 ; gain = 328.613 ; free physical = 1345 ; free virtual = 41199
+
+Phase 8 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 1.06893 %
+  Global Horizontal Routing Utilization  = 1.49822 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+--GLOBAL Congestion:
+Utilization threshold used for congestion level computation: 0.85
+Congestion Report
+North Dir 1x1 Area, Max Cong = 47.7477%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 47.7477%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 61.7647%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 66.1765%, No Congested Regions.
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 8 Route finalize | Checksum: 1f51cd247
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:41 . Memory (MB): peak = 3592.770 ; gain = 328.613 ; free physical = 1345 ; free virtual = 41198
+
+Phase 9 Verifying routed nets
+
+ Verification completed successfully
+Phase 9 Verifying routed nets | Checksum: 1f51cd247
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:41 . Memory (MB): peak = 3592.770 ; gain = 328.613 ; free physical = 1345 ; free virtual = 41198
+
+Phase 10 Depositing Routes
+Phase 10 Depositing Routes | Checksum: 22217d4ce
+
+Time (s): cpu = 00:01:04 ; elapsed = 00:00:41 . Memory (MB): peak = 3592.770 ; gain = 328.613 ; free physical = 1351 ; free virtual = 41205
+
+Phase 11 Post Process Routing
+Phase 11 Post Process Routing | Checksum: 22217d4ce
+
+Time (s): cpu = 00:01:04 ; elapsed = 00:00:41 . Memory (MB): peak = 3592.770 ; gain = 328.613 ; free physical = 1344 ; free virtual = 41198
+
+Phase 12 Post Router Timing
+
+Phase 12.1 Update Timing
+Phase 12.1 Update Timing | Checksum: 22217d4ce
+
+Time (s): cpu = 00:01:05 ; elapsed = 00:00:41 . Memory (MB): peak = 3592.770 ; gain = 328.613 ; free physical = 1345 ; free virtual = 41199
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-3.576 | TNS=-130.242| WHS=0.067  | THS=0.000  |
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 12 Post Router Timing | Checksum: 22217d4ce
+
+Time (s): cpu = 00:01:05 ; elapsed = 00:00:41 . Memory (MB): peak = 3592.770 ; gain = 328.613 ; free physical = 1348 ; free virtual = 41202
+Total Elapsed time in route_design: 41.45 secs
+
+Phase 13 Post-Route Event Processing
+Phase 13 Post-Route Event Processing | Checksum: 12d9977e5
+
+Time (s): cpu = 00:01:05 ; elapsed = 00:00:42 . Memory (MB): peak = 3592.770 ; gain = 328.613 ; free physical = 1354 ; free virtual = 41208
+INFO: [Route 35-16] Router Completed Successfully
+Ending Routing Task | Checksum: 12d9977e5
+
+Time (s): cpu = 00:01:05 ; elapsed = 00:00:42 . Memory (MB): peak = 3592.770 ; gain = 328.613 ; free physical = 1344 ; free virtual = 41198
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+112 Infos, 15 Warnings, 15 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.statsThreshold
+INFO: [Vivado 12-24828] Executing command : report_drc -file camera_vga_system_drc_routed.rpt -pb camera_vga_system_drc_routed.pb -rpx camera_vga_system_drc_routed.rpx
+Command: report_drc -file camera_vga_system_drc_routed.rpt -pb camera_vga_system_drc_routed.pb -rpx camera_vga_system_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.runs/impl_1/camera_vga_system_drc_routed.rpt.
+report_drc completed successfully
+INFO: [Vivado 12-24828] Executing command : report_methodology -file camera_vga_system_methodology_drc_routed.rpt -pb camera_vga_system_methodology_drc_routed.pb -rpx camera_vga_system_methodology_drc_routed.rpx
+Command: report_methodology -file camera_vga_system_methodology_drc_routed.rpt -pb camera_vga_system_methodology_drc_routed.pb -rpx camera_vga_system_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file /media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.runs/impl_1/camera_vga_system_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [Vivado 12-24828] Executing command : report_timing_summary -max_paths 10 -routable_nets -report_unconstrained -file camera_vga_system_timing_summary_routed.rpt -pb camera_vga_system_timing_summary_routed.pb -rpx camera_vga_system_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/ddr_byte_group_io/input_[5].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/ddr_byte_group_io/input_[1].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/ddr_byte_group_io/input_[2].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/ddr_byte_group_io/input_[3].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/ddr_byte_group_io/input_[6].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/ddr_byte_group_io/input_[7].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/ddr_byte_group_io/input_[8].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/ddr_byte_group_io/input_[9].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[4].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[0].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[1].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[3].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[5].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[6].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[7].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/ddr_byte_group_io/input_[9].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/input_[3].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/input_[1].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/input_[0].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/input_[2].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/input_[5].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/input_[6].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/input_[7].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/ddr_byte_group_io/input_[8].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[4].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[1].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[2].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[3].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[5].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[7].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[8].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-469] The REFCLK pin of IDELAYCTRL mig_inst/u_mig_7series_0_mig/u_iodelay_ctrl/u_idelayctrl_200 has a clock period of 10.000 ns (frequency 100.000 Mhz) but IDELAYE2 mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/ddr_byte_group_io/input_[9].iserdes_dq_.idelay_dq.idelaye2 has REFCLK_FREQUENCY of 200.000 Mhz (period 5.000 ns). The IDELAYCTRL REFCLK pin frequency must match the IDELAYE2 REFCLK_FREQUENCY property.
+Resolution: Check that the IDELAYCTRL REFCLK pin is receiving a clock and that the period of the clock matches the REFCLK_FREQUENCY property of the <IDELAYE2/ODELAYE2>.
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+INFO: [Vivado 12-24838] Running report commands "report_bus_skew, report_incremental_reuse, report_route_status" in parallel.
+Running report generation with 3 threads.
+INFO: [Vivado 12-24828] Executing command : report_incremental_reuse -file camera_vga_system_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [Vivado 12-24828] Executing command : report_route_status -file camera_vga_system_route_status.rpt -pb camera_vga_system_route_status.pb
+INFO: [Vivado 12-24828] Executing command : report_bus_skew -warn_on_violation -file camera_vga_system_bus_skew_routed.rpt -pb camera_vga_system_bus_skew_routed.pb -rpx camera_vga_system_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Vivado 12-24828] Executing command : report_power -file camera_vga_system_power_routed.rpt -pb camera_vga_system_power_summary_routed.pb -rpx camera_vga_system_power_routed.rpx
+Command: report_power -file camera_vga_system_power_routed.rpt -pb camera_vga_system_power_summary_routed.pb -rpx camera_vga_system_power_routed.rpx
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+133 Infos, 16 Warnings, 48 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [Vivado 12-24828] Executing command : report_clock_utilization -file camera_vga_system_clock_utilization_routed.rpt
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3648.797 ; gain = 0.000 ; free physical = 1356 ; free virtual = 41235
+Wrote PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.41 . Memory (MB): peak = 3648.797 ; gain = 0.000 ; free physical = 1397 ; free virtual = 41293
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3648.797 ; gain = 0.000 ; free physical = 1397 ; free virtual = 41293
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3648.797 ; gain = 0.000 ; free physical = 1365 ; free virtual = 41262
+Wrote Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3648.797 ; gain = 0.000 ; free physical = 1363 ; free virtual = 41261
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3648.797 ; gain = 0.000 ; free physical = 1353 ; free virtual = 41252
+Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.5 . Memory (MB): peak = 3648.797 ; gain = 0.000 ; free physical = 1345 ; free virtual = 41244
+INFO: [Common 17-1381] The checkpoint '/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado project/camera-vga-test-1/camera-vga-test-1.runs/impl_1/camera_vga_system_routed.dcp' has been generated.
+INFO: [Common 17-206] Exiting Vivado at Fri Mar 13 16:22:03 2026...
+
+*** Running vivado
+    with args -log camera_vga_system.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source camera_vga_system.tcl -notrace
+
+
+****** Vivado v2025.1 (64-bit)
+  **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Fri Mar 13 16:22:14 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source camera_vga_system.tcl -notrace
+Command: open_checkpoint camera_vga_system_routed.dcp
+INFO: [Device 21-403] Loading part xc7a200tfbg484-2
+Netlist sorting complete. Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.08 . Memory (MB): peak = 1732.125 ; gain = 0.000 ; free physical = 2021 ; free virtual = 41905
+INFO: [Netlist 29-17] Analyzing 541 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'u_clk_wiz/clk_in1' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored for synthesis but preserved for implementation.
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1845.562 ; gain = 0.000 ; free physical = 1738 ; free virtual = 41622
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2432.383 ; gain = 0.000 ; free physical = 1356 ; free virtual = 41240
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2432.383 ; gain = 0.000 ; free physical = 1347 ; free virtual = 41232
+Read PlaceDB: Time (s): cpu = 00:00:00.36 ; elapsed = 00:00:00.36 . Memory (MB): peak = 2432.383 ; gain = 0.000 ; free physical = 1355 ; free virtual = 41239
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2432.383 ; gain = 0.000 ; free physical = 1354 ; free virtual = 41238
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2441.531 ; gain = 9.148 ; free physical = 1345 ; free virtual = 41230
+Read Physdb Files: Time (s): cpu = 00:00:00.52 ; elapsed = 00:00:00.44 . Memory (MB): peak = 2441.531 ; gain = 9.148 ; free physical = 1345 ; free virtual = 41230
+Restored from archive | CPU: 0.550000 secs | Memory: 20.826752 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.54 ; elapsed = 00:00:00.46 . Memory (MB): peak = 2441.531 ; gain = 16.086 ; free physical = 1345 ; free virtual = 41230
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2441.531 ; gain = 0.000 ; free physical = 1349 ; free virtual = 41233
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 224 instances were transformed.
+  IOBUFDS_INTERMDISABLE => IOBUFDS_INTERMDISABLE (IBUFDS_INTERMDISABLE_INT(x2), INV, OBUFTDS(x2)): 4 instances
+  IOBUF_INTERMDISABLE => IOBUF_INTERMDISABLE (IBUF_INTERMDISABLE, OBUFT): 32 instances
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 17 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 1 instance 
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 2 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 161 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 6 instances
+  SRLC32E => SRL16E: 1 instance 
+
+sh: 1: cannot create /media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/vivado: Is a directory
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.1 (64-bit) build 6140274
+WARNING: [Vivado 12-23575] Critical violations of the methodology design rules detected. Critical violations may contribute to timing failures or cause functional issues in hardware. Run report_methodology for more information.
+INFO: [Memdata 28-167] Found XPM memory block u_write_fifo/frame_ctrl_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst with a P_MEMORY_PRIMITIVE property set to auto. A value of block is required. You will not be able to use the updatemem program to update the bitstream with new data for the u_write_fifo/frame_ctrl_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst block.
+Command: write_bitstream -force camera_vga_system.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a200t'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip'.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado 12-3199] DRC finished with 0 Errors
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./camera_vga_system.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-1876] WebTalk data collection is mandatory when using a ULT device. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-83] Releasing license: Implementation
+24 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+INFO: [Common 17-206] Exiting Vivado at Fri Mar 13 16:22:39 2026...
