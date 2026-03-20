@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Fri Mar 13 16:21:57 2026
+| Date         : Fri Mar 20 16:00:27 2026
 | Host         : tsmc-System-Product-Name running 64-bit Ubuntu 22.04.3 LTS
 | Command      : report_drc -file camera_vga_system_drc_routed.rpt -pb camera_vga_system_drc_routed.pb -rpx camera_vga_system_drc_routed.rpx
 | Design       : camera_vga_system
@@ -24,15 +24,16 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max checks: <unlimited>
-             Checks found: 7
+             Checks found: 11
 +-----------+----------+-----------------------------------------------------+--------+
 | Rule      | Severity | Description                                         | Checks |
 +-----------+----------+-----------------------------------------------------+--------+
 | CFGBVS-1  | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1      |
 | DPOP-1    | Warning  | PREG Output pipelining                              | 1      |
 | DPOP-2    | Warning  | MREG Output pipelining                              | 1      |
+| PDCN-1569 | Warning  | LUT equation term check                             | 3      |
 | REQP-1709 | Warning  | Clock output buffering                              | 1      |
-| REQP-1839 | Warning  | RAMB36 async control check                          | 2      |
+| REQP-1839 | Warning  | RAMB36 async control check                          | 3      |
 | RTSTAT-10 | Warning  | No routable loads                                   | 1      |
 +-----------+----------+-----------------------------------------------------+--------+
 
@@ -61,6 +62,21 @@ MREG Output pipelining
 DSP u_ddr3_reader/R multiplier stage u_ddr3_reader/R/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 Related violations: <none>
 
+PDCN-1569#1 Warning
+LUT equation term check  
+Used physical LUT pin 'A2' of cell dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1 (pin dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1/I0) is not included in the LUT equation: 'O5=(A5*A1)+(A5*(~A1)*(~A4))+((~A5))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#2 Warning
+LUT equation term check  
+Used physical LUT pin 'A2' of cell dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.id_state[0]_i_1 (pin dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.id_state[0]_i_1/I0) is not included in the LUT equation: 'O6=(A6+~A6)*((A5))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
+PDCN-1569#3 Warning
+LUT equation term check  
+Used physical LUT pin 'A3' of cell dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1 (pin dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/temp_curid[31]_i_1/I1) is not included in the LUT equation: 'O5=(A5*A1)+(A5*(~A1)*(~A4))+((~A5))'. If this cell is a user instantiated LUT in the design, please remove connectivity to the pin or change the equation and/or INIT string of the LUT to prevent this issue. If the cell is inferred or IP created LUT, please regenerate the IP and/or resynthesize the design to attempt to correct the issue.
+Related violations: <none>
+
 REQP-1709#1 Warning
 Clock output buffering  
 PLLE2_ADV connectivity violation. The signal mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/pll_clk3_out on the mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/plle2_i/CLKOUT3 pin of mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/plle2_i does not drive the same kind of BUFFER load as the other CLKOUT pins. Routing from the different buffer types will not be phase aligned.
@@ -68,29 +84,37 @@ Related violations: <none>
 
 REQP-1839#1 Warning
 RAMB36 async control check  
-The RAMB36E1 u_write_fifo/data_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0 has an input control pin u_write_fifo/data_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/ENARDEN (net: u_write_fifo/data_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_1_i_1_n_0) which is driven by a register (u_ddr3_writer/fifo_rd_en_int_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 u_read_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin u_read_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/ENARDEN (net: u_read_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (u_ddr3_reader/fifo_wr_en_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#2 Warning
+RAMB36 async control check  
+The RAMB36E1 u_write_fifo/data_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0 has an input control pin u_write_fifo/data_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/ENARDEN (net: u_write_fifo/data_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_1_i_1_n_0) which is driven by a register (u_ddr3_writer/fifo_rd_en_int_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#3 Warning
 RAMB36 async control check  
 The RAMB36E1 u_write_fifo/data_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_1 has an input control pin u_write_fifo/data_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_1/ENARDEN (net: u_write_fifo/data_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_1_i_1_n_0) which is driven by a register (u_ddr3_writer/fifo_rd_en_int_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 RTSTAT-10#1 Warning
 No routable loads  
-45 net(s) have no routable loads. The problem bus(es) and/or net(s) are u_ddr3_reader/Q[31:0],
-u_read_fifo/gnuram_async_fifo.xpm_fifo_base_inst/overflow,
-u_read_fifo/gnuram_async_fifo.xpm_fifo_base_inst/rd_data_count[0],
-u_read_fifo/gnuram_async_fifo.xpm_fifo_base_inst/underflow,
-u_read_fifo/gnuram_async_fifo.xpm_fifo_base_inst/wr_data_count[0],
-u_read_fifo/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/wr_rst_busy,
-u_write_fifo/data_fifo/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/wr_rst_busy,
-u_write_fifo/frame_ctrl_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/doutb[1:0],
-u_write_fifo/frame_ctrl_fifo/gnuram_async_fifo.xpm_fifo_base_inst/overflow,
-u_write_fifo/frame_ctrl_fifo/gnuram_async_fifo.xpm_fifo_base_inst/rd_data_count[0],
-u_write_fifo/frame_ctrl_fifo/gnuram_async_fifo.xpm_fifo_base_inst/underflow,
-u_write_fifo/frame_ctrl_fifo/gnuram_async_fifo.xpm_fifo_base_inst/wr_data_count[0]
-u_write_fifo/frame_ctrl_fifo/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/wr_rst_busy.
+54 net(s) have no routable loads. The problem bus(es) and/or net(s) are dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_en_2[1],
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_4_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg[2:0],
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg_en_2[1],
+dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/TMS,
+u_read_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/doutb[0],
+u_read_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/doutb[10],
+u_read_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/doutb[11],
+u_read_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/doutb[16],
+u_read_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/doutb[1],
+u_read_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/doutb[2],
+u_read_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/doutb[3],
+u_read_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/doutb[8],
+u_read_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/doutb[9],
+u_write_fifo/frame_ctrl_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/doutb[1:0]
+ (the first 15 of 51 listed nets/buses).
 Related violations: <none>
 
 

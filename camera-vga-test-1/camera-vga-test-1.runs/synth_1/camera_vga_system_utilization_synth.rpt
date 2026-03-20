@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Fri Mar 13 16:20:30 2026
+| Date         : Fri Mar 20 15:58:47 2026
 | Host         : tsmc-System-Product-Name running 64-bit Ubuntu 22.04.3 LTS
 | Command      : report_utilization -file camera_vga_system_utilization_synth.rpt -pb camera_vga_system_utilization_synth.pb
 | Design       : camera_vga_system
@@ -31,13 +31,13 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*                |  733 |     0 |          0 |    134600 |  0.54 |
-|   LUT as Logic             |  729 |     0 |          0 |    134600 |  0.54 |
+| Slice LUTs*                |  789 |     0 |          0 |    134600 |  0.59 |
+|   LUT as Logic             |  785 |     0 |          0 |    134600 |  0.58 |
 |   LUT as Memory            |    4 |     0 |          0 |     46200 | <0.01 |
 |     LUT as Distributed RAM |    4 |     0 |            |           |       |
 |     LUT as Shift Register  |    0 |     0 |            |           |       |
-| Slice Registers            | 1278 |     0 |          0 |    269200 |  0.47 |
-|   Register as Flip Flop    | 1278 |     0 |          0 |    269200 |  0.47 |
+| Slice Registers            | 1311 |     0 |          0 |    269200 |  0.49 |
+|   Register as Flip Flop    | 1311 |     0 |          0 |    269200 |  0.49 |
 |   Register as Latch        |    0 |     0 |          0 |    269200 |  0.00 |
 | F7 Muxes                   |    0 |     0 |          0 |     67300 |  0.00 |
 | F8 Muxes                   |    0 |     0 |          0 |     33650 |  0.00 |
@@ -60,9 +60,9 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 6     |          Yes |           - |          Set |
-| 46    |          Yes |           - |        Reset |
-| 46    |          Yes |         Set |            - |
-| 1180  |          Yes |       Reset |            - |
+| 47    |          Yes |           - |        Reset |
+| 58    |          Yes |         Set |            - |
+| 1200  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -72,9 +72,9 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-------------------+------+-------+------------+-----------+-------+
 |     Site Type     | Used | Fixed | Prohibited | Available | Util% |
 +-------------------+------+-------+------------+-----------+-------+
-| Block RAM Tile    |  2.5 |     0 |          0 |       365 |  0.68 |
-|   RAMB36/FIFO*    |    2 |     0 |          0 |       365 |  0.55 |
-|     RAMB36E1 only |    2 |       |            |           |       |
+| Block RAM Tile    |  3.5 |     0 |          0 |       365 |  0.96 |
+|   RAMB36/FIFO*    |    3 |     0 |          0 |       365 |  0.82 |
+|     RAMB36E1 only |    3 |       |            |           |       |
 |   RAMB18          |    1 |     0 |          0 |       730 |  0.14 |
 |     RAMB18E1 only |    1 |       |            |           |       |
 +-------------------+------+-------+------------+-----------+-------+
@@ -98,7 +98,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |   31 |     0 |          0 |       285 | 10.88 |
+| Bonded IOB                  |   32 |     0 |          0 |       285 | 11.23 |
 | Bonded IPADs                |    0 |     0 |          0 |        14 |  0.00 |
 | Bonded OPADs                |    0 |     0 |          0 |         8 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |        10 |  0.00 |
@@ -123,7 +123,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +------------+------+-------+------------+-----------+-------+
 |  Site Type | Used | Fixed | Prohibited | Available | Util% |
 +------------+------+-------+------------+-----------+-------+
-| BUFGCTRL   |    0 |     0 |          0 |        32 |  0.00 |
+| BUFGCTRL   |    1 |     0 |          0 |        32 |  3.13 |
 | BUFIO      |    0 |     0 |          0 |        40 |  0.00 |
 | MMCME2_ADV |    0 |     0 |          0 |        10 |  0.00 |
 | PLLE2_ADV  |    0 |     0 |          0 |        10 |  0.00 |
@@ -157,24 +157,25 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     | 1180 |        Flop & Latch |
-| LUT2     |  264 |                 LUT |
-| LUT6     |  172 |                 LUT |
-| LUT3     |  155 |                 LUT |
-| LUT5     |  152 |                 LUT |
-| LUT4     |  101 |                 LUT |
-| CARRY4   |   71 |          CarryLogic |
+| FDRE     | 1200 |        Flop & Latch |
+| LUT2     |  263 |                 LUT |
+| LUT6     |  195 |                 LUT |
+| LUT5     |  174 |                 LUT |
+| LUT3     |  174 |                 LUT |
+| LUT4     |  114 |                 LUT |
+| CARRY4   |   67 |          CarryLogic |
 | LUT1     |   61 |                 LUT |
-| FDSE     |   46 |        Flop & Latch |
-| FDCE     |   46 |        Flop & Latch |
+| FDSE     |   58 |        Flop & Latch |
+| FDCE     |   47 |        Flop & Latch |
 | OBUF     |   18 |                  IO |
-| IBUF     |   12 |                  IO |
+| IBUF     |   13 |                  IO |
 | FDPE     |    6 |        Flop & Latch |
 | RAMD32   |    4 |  Distributed Memory |
-| RAMB36E1 |    2 |        Block Memory |
+| RAMB36E1 |    3 |        Block Memory |
 | RAMB18E1 |    1 |        Block Memory |
 | OBUFT    |    1 |                  IO |
 | DSP48E1  |    1 |    Block Arithmetic |
+| BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
 
@@ -185,6 +186,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 |    Ref Name   | Used |
 +---------------+------+
 | mig_7series_0 |    1 |
+| ila_0         |    1 |
 | clk_wiz_0     |    1 |
 +---------------+------+
 

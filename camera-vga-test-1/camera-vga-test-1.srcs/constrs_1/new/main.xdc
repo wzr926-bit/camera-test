@@ -5,6 +5,7 @@ create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} -add [get_
 
 ## sys_resetn → 接到 KEY(0) 作为按键复位（低有效）
 set_property -dict {PACKAGE_PIN T6 IOSTANDARD LVCMOS15} [get_ports {sys_rst_n}]
+set_property -dict {PACKAGE_PIN Y6  IOSTANDARD LVCMOS15} [get_ports {key[1]}] ;# UP
 
 
 ## VGA RGB

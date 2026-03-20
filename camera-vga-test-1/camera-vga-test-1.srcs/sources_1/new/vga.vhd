@@ -27,6 +27,10 @@ entity vga is
       signal tready_out    : out std_logic;  
       signal tvalid_in     : in  std_logic;
       signal tlast_in      : in  std_logic;
+      signal test_pattern_en_in : in std_logic;
+      signal dbg_write_done_in  : in std_logic;
+      signal dbg_read_enable_in : in std_logic;
+      signal dbg_fifo_empty_in  : in std_logic;
        
       signal VGA_HS_O_out  : out std_logic;
       signal VGA_VS_O_out  : out std_logic;
@@ -78,10 +82,6 @@ constant V_BP:integer:=10; -- V front porch width (lines)
 constant V_PW:integer:=2; -- V sync pulse width (lines)
 constant V_MAX:integer:=525; -- V total period (lines)
 
--- Debug aid: force output test pattern regardless of input stream.
--- Set to '0' to revert to normal (stream-driven) RGB output.
-constant force_test_pattern_c:std_logic:='1';
-
 begin
 
 VGA_HS_O_out <= VGA_HS_O_r;
@@ -122,8 +122,8 @@ begin
       VGA_G <= (others=>'0');
       VGA_B <= (others=>'0');
       VGA_R <= (others=>'0');
-   elsif(tvalid_in='0' or force_test_pattern_c='1') then
-      -- No (or ignored) input stream: generate a simple color bar test pattern.
+   elsif(test_pattern_en_in='1') then
+      -- Forced debug mode: generate a simple color bar test pattern.
       x := hcount_r - to_unsigned(H_FP,hcount_r'length);
          if(x < to_unsigned(80,x'length)) then
             VGA_R <= (others=>'1');
@@ -158,6 +158,11 @@ begin
             VGA_G <= (others=>'0');
             VGA_B <= (others=>'0');
          end if;
+   elsif(tvalid_in='0') then
+      -- No stream data: output white.
+      VGA_G <= (others=>'1');
+      VGA_B <= (others=>'1');
+      VGA_R <= (others=>'1');
    else
       case count_r is
          when "00" =>
@@ -177,6 +182,20 @@ begin
             VGA_B <= tdata_r(23 downto 20);
             VGA_R <= tdata_r(31 downto 28);
       end case;
+   end if;
+
+   -- 左上角调试块（64x64）:
+   -- R = write_done(锁存后)
+   -- G = read_enable
+   -- B = vga_fifo_empty
+   if (pixel_valid='1') and
+      (hcount_r >= to_unsigned(H_FP, hcount_r'length)) and
+      (hcount_r < to_unsigned(H_FP + 64, hcount_r'length)) and
+      (vcount_r >= to_unsigned(V_FP, vcount_r'length)) and
+      (vcount_r < to_unsigned(V_FP + 64, vcount_r'length)) then
+      VGA_R <= (others => dbg_write_done_in);
+      VGA_G <= (others => dbg_read_enable_in);
+      VGA_B <= (others => dbg_fifo_empty_in);
    end if;
 end process;
  
@@ -221,10 +240,11 @@ line_req_out <= line_req;
     process(clk_in)
     begin
         if rising_edge(clk_in) then
-            -- 在垂直消隐期间请求下一行
-            if pixel_valid_y = '0' and vcount_r = to_unsigned(V_FP - 1, vcount_r'length) then
-                line_req <= '1';
-                line_num <= 0;
+         -- 每条可见扫描线开始时请求该行数据
+         -- vcount_r = V_FP..V_FP+FRAME_HEIGHT-1 对应 line_num = 0..479
+         if (hcount_r = to_unsigned(0, hcount_r'length)) and (pixel_valid_y = '1') then
+            line_req <= '1';
+            line_num <= to_integer(vcount_r) - V_FP;
             else
                 line_req <= '0';
             end if;

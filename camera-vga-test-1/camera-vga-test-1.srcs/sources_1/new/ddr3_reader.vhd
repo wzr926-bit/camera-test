@@ -57,11 +57,14 @@ begin
             arvalid <= '0';
             rready <= '0';
             fifo_wr_en <= '0';
+            vga_data_valid <= '0';
             
         elsif rising_edge(clk) then
             -- 默认值
             arvalid <= '0';
+            rready <= '0';
             fifo_wr_en <= '0';
+            vga_data_valid <= '0';
             
             case state is
                 when IDLE =>
@@ -75,13 +78,22 @@ begin
                     
                 when START_READ =>
                     -- 发起突发读取请求
-                    current_burst_words <= BURST_LENGTH;
+                    if words_remaining > BURST_LENGTH then
+                        current_burst_words <= BURST_LENGTH;
+                        arlen <= std_logic_vector(to_unsigned(BURST_LENGTH - 1, 8));
+                    else
+                        current_burst_words <= words_remaining;
+                        arlen <= std_logic_vector(to_unsigned(words_remaining - 1, 8));
+                    end if;
                     araddr <= std_logic_vector(line_addr);
-                    arlen <= std_logic_vector(to_unsigned(BURST_LENGTH - 1, 8));
                     arvalid <= '1';
                     
                     if arready = '1' then
-                        line_addr <= line_addr + (BURST_LENGTH * 16);
+                        if words_remaining > BURST_LENGTH then
+                            line_addr <= line_addr + (BURST_LENGTH * 16);
+                        else
+                            line_addr <= line_addr + (words_remaining * 16);
+                        end if;
                         state <= WAIT_DATA;
                     end if;
                     
@@ -91,13 +103,13 @@ begin
                     if rvalid = '1' then
                         fifo_buffer <= rdata;
                         byte_sel <= 0;
-                        state <= SEND_TO_FIFO;
-                        
-                        if rlast = '1' then
-                            words_remaining <= words_remaining - current_burst_words;
-                        else
+                        if current_burst_words > 0 then
                             current_burst_words <= current_burst_words - 1;
                         end if;
+                        if words_remaining > 0 then
+                            words_remaining <= words_remaining - 1;
+                        end if;
+                        state <= SEND_TO_FIFO;
                     end if;
                     
                 when SEND_TO_FIFO =>
@@ -114,18 +126,16 @@ begin
                         
                         if byte_sel = 3 then
                             -- 一个128位字处理完
-                            if words_remaining = 0 then
+                            if (words_remaining = 0) and (current_burst_words = 0) then
                                 -- 行读取完成
                                 vga_data_valid <= '1';
                                 state <= IDLE;
-                            elsif words_remaining <= BURST_LENGTH and 
-                                  current_burst_words = 0 then
+                            elsif current_burst_words = 0 then
                                 -- 发起下一突发
                                 state <= START_READ;
-                            elsif current_burst_words > 0 then
+                            else
                                 -- 继续当前突发
                                 state <= WAIT_DATA;
-                                current_burst_words <= current_burst_words - 1;
                             end if;
                         else
                             byte_sel <= byte_sel + 1;

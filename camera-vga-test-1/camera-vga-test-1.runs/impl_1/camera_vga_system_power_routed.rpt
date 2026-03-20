@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date             : Fri Mar 13 16:22:02 2026
+| Date             : Fri Mar 20 16:00:33 2026
 | Host             : tsmc-System-Product-Name running 64-bit Ubuntu 22.04.3 LTS
 | Command          : report_power -file camera_vga_system_power_routed.rpt -pb camera_vga_system_power_summary_routed.pb -rpx camera_vga_system_power_routed.rpx
 | Design           : camera_vga_system
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.231        |
+| Total On-Chip Power (W)  | 1.249        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.081        |
+| Dynamic (W)              | 1.099        |
 | Device Static (W)        | 0.150        |
 | Effective TJA (C/W)      | 2.5          |
-| Max Ambient (C)          | 82.0         |
-| Junction Temperature (C) | 28.0         |
+| Max Ambient (C)          | 81.9         |
+| Junction Temperature (C) | 28.1         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,25 +52,26 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.037 |       35 |       --- |             --- |
-| Slice Logic              |     0.009 |    18971 |       --- |             --- |
-|   LUT as Logic           |     0.008 |     6911 |    133800 |            5.17 |
-|   Register               |    <0.001 |     7785 |    267600 |            2.91 |
-|   CARRY4                 |    <0.001 |      234 |     33450 |            0.70 |
-|   LUT as Distributed RAM |    <0.001 |      652 |     46200 |            1.41 |
-|   LUT as Shift Register  |    <0.001 |      334 |     46200 |            0.72 |
-|   F7/F8 Muxes            |    <0.001 |        3 |    133800 |           <0.01 |
-|   Others                 |    <0.001 |      413 |       --- |             --- |
-| Signals                  |     0.014 |    14920 |       --- |             --- |
-| Block RAM                |     0.003 |      2.5 |       365 |            0.68 |
+| Clocks                   |     0.042 |       36 |       --- |             --- |
+| Slice Logic              |     0.015 |    22656 |       --- |             --- |
+|   LUT as Logic           |     0.013 |     8020 |    133800 |            5.99 |
+|   Register               |    <0.001 |     9700 |    267600 |            3.62 |
+|   CARRY4                 |    <0.001 |      262 |     33450 |            0.78 |
+|   LUT as Distributed RAM |    <0.001 |      676 |     46200 |            1.46 |
+|   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
+|   LUT as Shift Register  |    <0.001 |      415 |     46200 |            0.90 |
+|   F7/F8 Muxes            |    <0.001 |        6 |    133800 |           <0.01 |
+|   Others                 |    <0.001 |      650 |       --- |             --- |
+| Signals                  |     0.020 |    17623 |       --- |             --- |
+| Block RAM                |     0.004 |        4 |       365 |            1.10 |
 | MMCM                     |     0.193 |        2 |        10 |           20.00 |
 | PLL                      |     0.115 |        1 |        10 |           10.00 |
-| DSPs                     |     0.000 |        1 |       740 |            0.14 |
-| I/O                      |     0.503 |       97 |       285 |           34.04 |
+| DSPs                     |    <0.001 |        1 |       740 |            0.14 |
+| I/O                      |     0.504 |       98 |       285 |           34.39 |
 | PHASER                   |     0.205 |       26 |       --- |             --- |
 | XADC                     |     0.002 |        1 |       --- |             --- |
 | Static Power             |     0.150 |          |           |                 |
-| Total                    |     1.231 |          |           |                 |
+| Total                    |     1.249 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -80,7 +81,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.156 |       0.122 |      0.034 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.173 |       0.140 |      0.034 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.384 |       0.353 |      0.031 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.007 |       0.002 |      0.005 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -140,6 +141,7 @@ Table of Contents
 | clk_out2_clk_wiz_0                                                                                                                                        | u_clk_wiz/inst/clk_out2_clk_wiz_0                                                                                                                                                                    |            10.0 |
 | clk_pll_i                                                                                                                                                 | mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/clk_pll_i                                                                                                                                         |            12.3 |
 | clkfbout_clk_wiz_0                                                                                                                                        | u_clk_wiz/inst/clkfbout_clk_wiz_0                                                                                                                                                                    |            10.0 |
+| dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK                                                                | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/TCK                                                                                                                                    |            33.0 |
 | freq_refclk                                                                                                                                               | mig_inst/u_mig_7series_0_mig/u_ddr3_infrastructure/freq_refclk                                                                                                                                       |             1.5 |
 | iserdes_clkdiv                                                                                                                                            | mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_A.ddr_byte_lane_A/iserdes_clkdiv            |            12.3 |
 | iserdes_clkdiv_1                                                                                                                                          | mig_inst/u_mig_7series_0_mig/u_memc_ui_top_axi/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/ddr_byte_lane_B.ddr_byte_lane_B/iserdes_clkdiv            |            12.3 |
@@ -181,22 +183,30 @@ Table of Contents
 +--------------------------------------------+-----------+
 | Name                                       | Power (W) |
 +--------------------------------------------+-----------+
-| camera_vga_system                          |     1.081 |
-|   mig_inst                                 |     0.950 |
-|     u_mig_7series_0_mig                    |     0.950 |
+| camera_vga_system                          |     1.099 |
+|   dbg_hub                                  |     0.003 |
+|     inst                                   |     0.003 |
+|       BSCANID.u_xsdbm_id                   |     0.003 |
+|   mig_inst                                 |     0.951 |
+|     u_mig_7series_0_mig                    |     0.951 |
 |       temp_mon_enabled.u_tempmon           |     0.004 |
 |       u_ddr3_infrastructure                |     0.202 |
-|       u_memc_ui_top_axi                    |     0.744 |
+|       u_memc_ui_top_axi                    |     0.745 |
 |   u_camera                                 |     0.002 |
 |   u_clk_wiz                                |     0.107 |
 |     inst                                   |     0.107 |
-|   u_ddr3_reader                            |     0.001 |
+|   u_ddr3_reader                            |     0.002 |
 |   u_ddr3_writer                            |     0.001 |
-|   u_read_fifo                              |     0.003 |
-|     gnuram_async_fifo.xpm_fifo_base_inst   |     0.003 |
-|   u_write_fifo                             |     0.006 |
-|     data_fifo                              |     0.005 |
-|       gnuram_async_fifo.xpm_fifo_base_inst |     0.005 |
+|   u_ila_0                                  |     0.005 |
+|     inst                                   |     0.005 |
+|       ila_core_inst                        |     0.005 |
+|   u_read_fifo                              |     0.008 |
+|     gnuram_async_fifo.xpm_fifo_base_inst   |     0.008 |
+|       rdp_inst                             |     0.001 |
+|   u_vga                                    |     0.004 |
+|   u_write_fifo                             |     0.005 |
+|     data_fifo                              |     0.004 |
+|       gnuram_async_fifo.xpm_fifo_base_inst |     0.004 |
 +--------------------------------------------+-----------+
 
 

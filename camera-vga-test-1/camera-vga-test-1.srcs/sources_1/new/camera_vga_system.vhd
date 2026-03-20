@@ -1,5 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
 library xpm;
 use xpm.vcomponents.all;
 
@@ -8,6 +9,7 @@ entity camera_vga_system is
         -- 系统时钟
         sys_clk_200mhz  : in std_logic;
         sys_rst_n       : in std_logic;
+        key             : in std_logic_vector(1 downto 1);
         
         -- 摄像头接口
         CAM_PCLK        : in std_logic;
@@ -45,8 +47,19 @@ entity camera_vga_system is
 end entity;
 
 architecture structural of camera_vga_system is
+    component ila_0
+        port (
+            clk    : in std_logic;
+            probe0 : in std_logic_vector(0 downto 0);
+            probe1 : in std_logic_vector(0 downto 0);
+            probe2 : in std_logic_vector(0 downto 0);
+            probe3 : in std_logic_vector(0 downto 0)
+        );
+    end component;
+    
     -- 时钟和复位
     signal clk_vga         : std_logic;
+    signal clk_vga_pix     : std_logic := '0';  -- 25MHz pixel clock for 640x480@60
     signal clk_cam         : std_logic;
     signal ui_clk          : std_logic;  -- MIG用户时钟(100MHz)
     signal ui_rst_n        : std_logic;
@@ -118,8 +131,58 @@ architecture structural of camera_vga_system is
     
     -- vga中间信号，用作帧同步
     signal vga_vsync : std_logic;
+    signal vga_clk_div_cnt : unsigned(0 downto 0) := (others => '0');
+    signal key1_meta       : std_logic := '1';
+    signal key1_sync       : std_logic := '1';
+    signal key1_prev       : std_logic := '1';
+    signal test_pattern_en : std_logic := '0';
+    signal write_done_seen : std_logic := '0';
+    
+    signal ila_probe0      : std_logic_vector(0 downto 0);
+    signal ila_probe1      : std_logic_vector(0 downto 0);
+    signal ila_probe2      : std_logic_vector(0 downto 0);
+    signal ila_probe3      : std_logic_vector(0 downto 0);
     
 begin
+    -- clk_wiz currently outputs 100MHz on clk_vga; divide by 4 -> 25MHz pixel clock
+    process(clk_vga)
+    begin
+        if rising_edge(clk_vga) then
+            if vga_clk_div_cnt = "1" then
+                vga_clk_div_cnt <= (others => '0');
+                clk_vga_pix <= not clk_vga_pix;
+            else
+                vga_clk_div_cnt <= vga_clk_div_cnt + 1;
+            end if;
+        end if;
+    end process;
+
+    -- KEY[1]（低有效）按下沿切换彩条开关
+    process(clk_vga_pix)
+    begin
+        if rising_edge(clk_vga_pix) then
+            key1_meta <= key(1);
+            key1_sync <= key1_meta;
+            key1_prev <= key1_sync;
+
+            if (key1_prev = '1') and (key1_sync = '0') then
+                test_pattern_en <= not test_pattern_en;
+            end if;
+        end if;
+    end process;
+
+    -- 锁存写完成脉冲，便于屏幕调试块观察
+    process(ui_clk, ui_rst_n)
+    begin
+        if ui_rst_n = '0' then
+            write_done_seen <= '0';
+        elsif rising_edge(ui_clk) then
+            if write_done = '1' then
+                write_done_seen <= '1';
+            end if;
+        end if;
+    end process;
+
     -- 摄像头模块
     u_camera : entity work.camera
         port map (
@@ -195,7 +258,7 @@ begin
         )
         port map (
             wr_clk => ui_clk,
-            rd_clk => clk_vga,  -- 使用摄像头时钟驱动VGA?
+            rd_clk => clk_vga_pix,
             rst => not ui_rst_n,
             wr_en => vga_fifo_wr_en,
             din => vga_fifo_data,
@@ -249,11 +312,15 @@ begin
     -- VGA显示模块
     u_vga : entity work.vga
         port map (
-            clk_in        => clk_vga,
+            clk_in        => clk_vga_pix,
             tdata_in      => vga_fifo_dout,
             tready_out    => vga_fifo_rd_en,
             tvalid_in     => not vga_fifo_empty,
             tlast_in      => '0',
+            test_pattern_en_in => test_pattern_en,
+            dbg_write_done_in  => write_done_seen,
+            dbg_read_enable_in => read_enable,
+            dbg_fifo_empty_in  => vga_fifo_empty,
             VGA_HS_O_out  => VGA_HS,
             VGA_VS_O_out  => vga_vsync,
             VGA_R_out     => VGA_R,
@@ -350,6 +417,21 @@ begin
     
     
     ui_rst_n <= mmcm_locked and init_calib_complete and pll_locked;
+    
+    ila_probe0(0) <= cam_tvalid;
+    ila_probe1(0) <= write_done;
+    ila_probe2(0) <= read_enable;
+    ila_probe3(0) <= vga_fifo_empty;
+    
+    --ILA
+    u_ila_0 : ila_0
+        port map (
+            clk     => ui_clk,
+            probe0 => ila_probe0,
+            probe1 => ila_probe1,
+            probe2 => ila_probe2,
+            probe3 => ila_probe3
+        );
     
 end architecture;
 

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Fri Mar 13 16:20:56 2026
+| Date         : Fri Mar 20 15:59:30 2026
 | Host         : tsmc-System-Product-Name running 64-bit Ubuntu 22.04.3 LTS
 | Command      : report_drc -file camera_vga_system_drc_opted.rpt -pb camera_vga_system_drc_opted.pb -rpx camera_vga_system_drc_opted.rpx
 | Design       : camera_vga_system
@@ -24,7 +24,7 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max checks: <unlimited>
-             Checks found: 6
+             Checks found: 7
 +-----------+----------+-----------------------------------------------------+--------+
 | Rule      | Severity | Description                                         | Checks |
 +-----------+----------+-----------------------------------------------------+--------+
@@ -32,7 +32,7 @@ Table of Contents
 | DPOP-1    | Warning  | PREG Output pipelining                              | 1      |
 | DPOP-2    | Warning  | MREG Output pipelining                              | 1      |
 | REQP-1709 | Warning  | Clock output buffering                              | 1      |
-| REQP-1839 | Warning  | RAMB36 async control check                          | 2      |
+| REQP-1839 | Warning  | RAMB36 async control check                          | 3      |
 +-----------+----------+-----------------------------------------------------+--------+
 
 2. REPORT DETAILS
@@ -67,10 +67,15 @@ Related violations: <none>
 
 REQP-1839#1 Warning
 RAMB36 async control check  
-The RAMB36E1 u_write_fifo/data_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0 has an input control pin u_write_fifo/data_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/ENARDEN (net: u_write_fifo/data_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_1_i_1_n_0) which is driven by a register (u_ddr3_writer/fifo_rd_en_int_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+The RAMB36E1 u_read_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg has an input control pin u_read_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg/ENARDEN (net: u_read_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/wea[0]) which is driven by a register (u_ddr3_reader/fifo_wr_en_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>
 
 REQP-1839#2 Warning
+RAMB36 async control check  
+The RAMB36E1 u_write_fifo/data_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0 has an input control pin u_write_fifo/data_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/ENARDEN (net: u_write_fifo/data_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_1_i_1_n_0) which is driven by a register (u_ddr3_writer/fifo_rd_en_int_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
+Related violations: <none>
+
+REQP-1839#3 Warning
 RAMB36 async control check  
 The RAMB36E1 u_write_fifo/data_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_1 has an input control pin u_write_fifo/data_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_1/ENARDEN (net: u_write_fifo/data_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_1_i_1_n_0) which is driven by a register (u_ddr3_writer/fifo_rd_en_int_reg) that has an active asychronous set or reset. This may cause corruption of the memory contents and/or read values when the set/reset is asserted and is not analyzed by the default static timing analysis. It is suggested to eliminate the use of a set/reset to registers driving this RAMB pin or else use a synchronous reset in which the assertion of the reset is timed by default.
 Related violations: <none>

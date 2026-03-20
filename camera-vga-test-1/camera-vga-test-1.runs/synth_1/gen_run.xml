@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a200tfbg484-2" LaunchTime="1773389869" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/camera_vga_system.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a200tfbg484-2" LaunchTime="1773993497" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/camera_vga_system.dcp">
   <File Type="VDS-TIMING-PB" Name="camera_vga_system_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="camera_vga_system_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="camera_vga_system.dcp"/>
@@ -101,6 +101,7 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="ila_0"/>
   <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mig_7series_0"/>
 </GenRun>

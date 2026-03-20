@@ -67,6 +67,7 @@ begin
             state <= IDLE;
             awvalid <= '0';
             wvalid <= '0';
+            wlast <= '0';
             bready <= '0';
             fifo_rd_en_int <= '0';
             write_done <= '0';
@@ -76,6 +77,7 @@ begin
             -- 默认值
             awvalid <= '0';
             wvalid <= '0';
+            wlast <= '0';
             fifo_rd_en_int <= '0';
             write_done <= '0';
             

@@ -12,8 +12,8 @@ vmap xil_defaultlib riviera/xil_defaultlib
 
 vlog -work xpm  -incr "+incdir+../../../../../../tools/Xilinx2025/2025.1/data/rsb/busdef" "+incdir+../../../camera-vga-test-1.gen/sources_1/ip/clk_wiz_0" -l xpm -l xil_defaultlib \
 "/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
-"/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv" \
 "/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
+"/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/Vivado/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv" \
 
 vcom -work xpm -93  -incr \
 "/media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/tools/Xilinx2025/2025.1/data/ip/xpm/xpm_VCOMP.vhd" \

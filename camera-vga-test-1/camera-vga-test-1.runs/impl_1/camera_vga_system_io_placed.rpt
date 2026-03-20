@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date                      : Fri Mar 13 16:21:11 2026
+| Date                      : Fri Mar 20 15:59:49 2026
 | Host                      : tsmc-System-Product-Name running 64-bit Ubuntu 22.04.3 LTS
 | Command                   : report_io -file camera_vga_system_io_placed.rpt
 | Design                    : camera_vga_system
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            97 |
+|            98 |
 +---------------+
 
 
@@ -502,7 +502,7 @@ Table of Contents
 | Y3         | DDR3_ba[1]     | High Range | IO_L9P_T1_DQS_34             | OUTPUT        | SSTL15      |      34 |            | FAST |                     |            FP_VTT_50 |         | FIXED      |           |          |          | NONE             |              |                   |              |
 | Y4         | DDR3_ba[2]     | High Range | IO_L11P_T1_SRCC_34           | OUTPUT        | SSTL15      |      34 |            | FAST |                     |            FP_VTT_50 |         | FIXED      |           |          |          | NONE             |              |                   |              |
 | Y5         |                |            | GND                          | GND           |             |         |            |      |                     |                      |     0.0 |            |           |          |          |                  |              |                   |              |
-| Y6         |                | High Range | IO_L18P_T2_34                | User IO       |             |      34 |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |
+| Y6         | key[1]         | High Range | IO_L18P_T2_34                | INPUT         | LVCMOS15    |      34 |            |      |                     |                 NONE |         | FIXED      |           |          |          | NONE             |              |                   |              |
 | Y7         |                | High Range | IO_L23N_T3_34                | User IO       |             |      34 |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |
 | Y8         |                | High Range | IO_L23P_T3_34                | User IO       |             |      34 |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |
 | Y9         |                | High Range | IO_L24N_T3_34                | User IO       |             |      34 |            |      |                     |                      |         |            |           |          |          |                  |              |                   |              |

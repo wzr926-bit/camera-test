@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a200tfbg484-2" LaunchTime="1773389869">
+<GenRun Id="impl_1" LaunchPart="xc7a200tfbg484-2" LaunchTime="1773993497">
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="camera_vga_system_postroute_physopted.rqs"/>
@@ -211,6 +211,7 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="ila_0"/>
   <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
   <BlockFileSet Type="BlockSrcs" Name="mig_7series_0"/>
 </GenRun>

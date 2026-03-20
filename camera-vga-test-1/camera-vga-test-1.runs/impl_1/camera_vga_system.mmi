@@ -12,7 +12,7 @@
 <MemInfo Version="1" Minor="9">
   <MemoryArray InstPath="u_write_fifo/data_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst" MemoryPrimitive="auto" MemoryConfiguration="asymmetrical">
     <MemoryLayout Name="u_write_fifo/data_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst" CoreMemory_Width="32" MemoryType="RAM_SDP">
-      <BRAM MemType="RAMB36" Placement="X7Y36" Read_Width_A="72" Read_Width_B="0" SLR_INDEX="0">
+      <BRAM MemType="RAMB36" Placement="X7Y40" Read_Width_A="72" Read_Width_B="0" SLR_INDEX="0">
         <DataWidth_PortA MSB="63" LSB="0"/>
         <AddressRange_PortA Begin="0" End="255"/>
         <BitLayout_PortA pattern="p0_d64"/>
@@ -21,13 +21,26 @@
         <BitLayout_PortB pattern="p0_d16"/>
         <Parity ON="false" NumBits="0"/>
       </BRAM>
-      <BRAM MemType="RAMB36" Placement="X6Y33" Read_Width_A="72" Read_Width_B="0" SLR_INDEX="0">
+      <BRAM MemType="RAMB36" Placement="X7Y38" Read_Width_A="72" Read_Width_B="0" SLR_INDEX="0">
         <DataWidth_PortA MSB="127" LSB="64"/>
         <AddressRange_PortA Begin="0" End="255"/>
         <BitLayout_PortA pattern="p0_d64"/>
         <DataWidth_PortB MSB="31" LSB="16"/>
         <AddressRange_PortB Begin="0" End="1023"/>
         <BitLayout_PortB pattern="p0_d16"/>
+        <Parity ON="false" NumBits="0"/>
+      </BRAM>
+    </MemoryLayout>
+  </MemoryArray>
+  <MemoryArray InstPath="u_read_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst" MemoryPrimitive="auto" MemoryConfiguration="enabled_configuration">
+    <MemoryLayout Name="u_read_fifo/gnuram_async_fifo.xpm_fifo_base_inst/gen_sdpram.xpm_memory_base_inst" CoreMemory_Width="32" MemoryType="RAM_SDP">
+      <BRAM MemType="RAMB36" Placement="X7Y35" Read_Width_A="36" Read_Width_B="36" SLR_INDEX="0">
+        <DataWidth_PortA MSB="31" LSB="0"/>
+        <AddressRange_PortA Begin="0" End="1023"/>
+        <BitLayout_PortA pattern="p0_d32"/>
+        <DataWidth_PortB MSB="31" LSB="0"/>
+        <AddressRange_PortB Begin="0" End="1023"/>
+        <BitLayout_PortB pattern="p0_d32"/>
         <Parity ON="false" NumBits="0"/>
       </BRAM>
     </MemoryLayout>
