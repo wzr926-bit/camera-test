@@ -1,0 +1,11 @@
+===================================
+Configuration Memory information
+===================================
+File Format        MCS
+Interface          SPIX1
+Size               16M
+Start Address      0x00000000
+End Address        0x00FFFFFF
+
+Addr1         Addr2         Date                    File(s)
+0x00000000    0x003A607B    Apr  1 13:14:09 2026    /media/tsmc/6a3f28f3-1a75-4d55-baf2-a6aa8be84a59/kwc/100t/ztachip/HW/examples/GHRD/ztachip.runs/impl_1/main.bit
